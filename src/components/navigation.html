@@ -1,0 +1,77 @@
+<!-- Component: Corporate Navigation Bar -->
+<nav class="w-full bg-white-pure relative z-50" x-data="{ open: false }">
+
+  <!-- 1. MAIN PARENT CONTAINER: Controls overall alignment and width -->
+  <div class="container py-4 md:py-3 flex justify-between items-center">
+
+    <!-- FIRST BLOCK: Logo Container -->
+    <div class="flex items-center">
+      <a href="#" class="block max-w-[170px] sm:max-w-[210px]">
+        <img src="/media/logo-harborshine.png" alt="Harborshine Cleaning Co." class="w-full h-auto object-contain">
+      </a>
+    </div>
+
+    <!-- SECOND BLOCK: Menu Items Wrapper (Hidden on Mobile) -->
+    <!-- Using standard ul / li structure with a tight gap as requested -->
+    <div class="hidden md:block">
+      <ul class="flex items-center gap-8 font-menu text-[1.35rem] font-medium tracking-wide text-dark-slate">
+        <li><a href="#services" class="hover:text-cyan-brand transition-colors">Cleaning Services</a></li>
+        <li><a href="#about" class="hover:text-cyan-brand transition-colors">About Us</a></li>
+        <li><a href="#contact" class="hover:text-cyan-brand transition-colors">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- THIRD BLOCK: Desktop Action Call Button (Hidden on Mobile) -->
+    <!-- Completely isolated to allow clean spacing via justify-between -->
+    <div class="hidden md:block">
+      <a href="tel:6197128080"
+        class="inline-block bg-yellow-light text-dark-slate font-menu font-bold text-[1.2rem] px-5 py-2 tracking-wide border border-dark-slate/5 hover:bg-yellow-gold transition-colors">
+        619-712-8080
+      </a>
+    </div>
+
+    <!-- MOBILE TRIGGER: Hamburger Icon (Only visible on mobile viewports) -->
+    <button @click="open = !open" class="block md:hidden p-1.5 text-dark-slate focus:outline-none cursor-pointer"
+      aria-label="Open Navigation Menu">
+      <svg class="w-8 h-8 fill-none stroke-current stroke-[2.5]" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="square" />
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- 2. MOBILE OVERLAY PANEL: Replicates the same logic when open -->
+  <div id="mobile-menu" x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-150"
+    x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-2"
+    class="absolute top-0 left-0 w-full bg-white-pure flex flex-col shadow-xl" style="display: none;">
+    <!-- Mobile Header inside the panel -->
+    <div class="container flex justify-between items-center py-4">
+      <div class="flex items-center">
+        <a href="#" class="block max-w-[170px]">
+          <img src="/media/logo-harborshine.png" alt="Harborshine Cleaning Co." class="w-full h-auto object-contain">
+        </a>
+      </div>
+
+      <button @click="open = false" class="p-1.5 text-dark-slate focus:outline-none cursor-pointer"
+        aria-label="Close Menu">
+        <svg class="w-8 h-8 fill-none stroke-current stroke-[2.5]" viewBox="0 0 24 24">
+          <path d="M18 6L6 18M6 6l12 12" stroke-linecap="square" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Yellow Bottom Body Links with precise text alignment -->
+    <div class="w-full bg-yellow-light py-8 px-10 border-t border-dark-slate/5">
+      <ul class="flex flex-col gap-8 font-menu text-[1.8rem] font-medium text-dark-slate tracking-wide text-left">
+        <li><a href="#about" @click="open = false" class="hover:text-cyan-brand transition-colors">About Us</a></li>
+        <li><a href="#services" @click="open = false" class="hover:text-cyan-brand transition-colors">Cleaning
+            Services</a></li>
+        <li><a href="#contact" @click="open = false" class="hover:text-cyan-brand transition-colors">Contact Us</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav>

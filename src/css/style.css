@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&display=swap");
+
+@theme {
+  --color-white-pure: #ffffff;
+  --color-cyan-brand: #3fb7c8;
+  --color-dark-slate: #1e3e49;
+  --color-yellow-gold: #e9bf35;
+  --color-yellow-light: #f0d473;
+  --color-deep-bg: #0d2327;
+
+  --font-heading: "Fjalla One", sans-serif;
+  --font-body: "Barlow", sans-serif;
+  --font-menu: "Fira Sans Extra Condensed", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-white-pure);
+  color: var(--color-dark-slate);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2rem);
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 3px solid var(--color-cyan-brand);
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.5;
+  color: #333333;
+}
+
+label {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 1440px;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "harborshine-landing",
+  "version": "1.0.0",
+  "description": "Premium landing page for Harborshine Cleaning Co. built with HTML, JavaScript, Tailwind CSS v4, and GSAP.",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "cleaning",
+    "services",
+    "landing-page",
+    "tailwind-v4",
+    "gsap"
+  ],
+  "author": "Dianyela Maldonado",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.0.16"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "alpinejs": "^3.15.12",
+    "gsap": "^3.15.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

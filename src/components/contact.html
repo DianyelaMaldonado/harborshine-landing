@@ -1,0 +1,61 @@
+<section id="contact" class="w-full py-16 bg-white-pure border-t-4 border-yellow-light">
+  <div class="container max-w-4xl flex flex-col items-center">
+    <h2>Contact Us</h2>
+    <p class="font-body text-base text-black mt-4 tracking-wide">Please Tell us how we can help you?</p>
+
+    <form class="w-full mt-10 space-y-6 text-left max-w-3xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex flex-col gap-1.5">
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" placeholder="E.G. JANEE.G. JANE"
+            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" placeholder="E.G. DOE"
+            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex flex-col gap-1.5">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" placeholder="E.G. +1 555-000-0000"
+            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="E.G. JANE.DOE@EXAMPLE.COM"
+            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label for="message">Message:</label>
+        <textarea id="message" rows="5" placeholder="WRITE YOUR MESSAGE HERE..."
+          class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none resize-none"></textarea>
+      </div>
+    </form>
+
+    <!-- Social Connections Layout Block -->
+    <div
+      class="w-full max-w-3xl mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center border-t border-dark-slate/10 pt-8 font-heading text-dark-slate tracking-wider uppercase">
+      <div class="flex flex-col items-center sm:items-start gap-3">
+        <span>Follow Us:</span>
+        <div class="flex gap-4">
+          <a href="#" class="w-11 h-11"><img src="/media/facebook-icon.png" alt="Facebook"
+              class="w-full h-full object-contain"></a>
+          <a href="#" class="w-11 h-11"><img src="/media/instagram-icon.png" alt="Instagram"
+              class="w-full h-full object-contain"></a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center sm:items-end gap-2">
+        <span>Call Us:</span>
+        <a href="tel:6197128080" class="flex items-center gap-3 text-lg font-body font-normal text-black normal-case">
+          <img src="/media/phone-icon.png" alt="Phone" class="w-8 h-8 object-contain">
+          <span>619 712 8080</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

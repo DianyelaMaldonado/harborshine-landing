@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&display=swap');
+@import 'tailwindcss';
 
 @theme {
   --color-white-pure: #ffffff;
@@ -9,9 +9,9 @@
   --color-yellow-light: #f0d473;
   --color-deep-bg: #0d2327;
 
-  --font-heading: "Albert Sans", sans-serif;
-  --font-body: "Albert Sans", sans-serif;
-  --font-menu: "Albert Sans Extra Condensed", sans-serif;
+  --font-heading: 'Albert Sans', sans-serif;
+  --font-body: 'Albert Sans', sans-serif;
+  --font-menu: 'Albert Sans Extra Condensed', sans-serif;
 }
 
 html {

@@ -1,19 +1,42 @@
 import { gsap } from "gsap";
 
-/**
- * Initializes the infinite scrolling animation for the San Diego locations marquee
- */
 export function initMarquee() {
-  const marqueeContainer = document.querySelector("#marquee-root .flex");
-
-  if (!marqueeContainer) {
-    console.warn("⚠️ Marquee Module: Target container not found in DOM yet.");
+  const track = document.getElementById("marquee-track");
+  if (!track) {
+    console.warn(
+      "⚠️ Marquee Module: Target '#marquee-track' container not found.",
+    );
     return;
   }
 
-  // Next week we will build the GSAP horizontal twin scroll here
-  console.log(
-    "🤖 Marquee Module: GSAP ready to animate with version:",
-    gsap.version,
-  );
+  const wrapper = track.querySelector(".flex");
+  const content = track.querySelector(".marquee-content");
+
+  if (!wrapper || !content) return;
+
+  // 1. CLONE ARCHITECTURE: Duplicate content once to create a seamless infinite seam
+  const clone = content.cloneNode(true);
+  wrapper.appendChild(clone);
+  const marqueeTimeline = gsap.to(wrapper, {
+    xPercent: -50,
+    ease: "none",
+    duration: 22,
+    repeat: -1,
+  });
+
+  track.addEventListener("mouseenter", () => {
+    gsap.to(marqueeTimeline, {
+      timeScale: 0,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+  });
+
+  track.addEventListener("mouseleave", () => {
+    gsap.to(marqueeTimeline, {
+      timeScale: 1,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+  });
 }

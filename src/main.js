@@ -35,11 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadComponent("contact-root", "/src/components/contact.html");
   await loadComponent("footer-root", "/src/components/footer.html");
 
-  console.log("🟩 HTML Layouts successfully mounted into DOM.");
-
   // 2. Trigger individual Javascript modules now that HTML exists
   initNavigation();
   initMarquee();
-
-  console.log("🚀 Harborshine fully componentized application is live!");
 });

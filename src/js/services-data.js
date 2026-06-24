@@ -24,14 +24,14 @@ export async function initServicesData() {
           : "";
 
         return `
-        <article class="w-full bg-cyan-brand text-white-pure rounded-[30px] overflow-hidden shadow-md flex flex-col transition-transform duration-300 hover:-translate-y-1 ${featuredClass}">
+        <article class="w-full bg-cyan-brand-dark text-white-pure rounded-[30px] overflow-hidden shadow-md flex flex-col ${featuredClass}">
           <div class="w-full h-55 overflow-hidden relative">
             <img src="${service.image}" alt="${service.alt}" class="w-full h-full object-cover">
           </div>
           <div class="p-6 flex flex-col items-center text-center grow">
-            <span class="font-heading font-light text-[1.5rem] tracking-wider mb-1 opacity-90 block italic lowercase">Harborshine</span>
-            <h3 class="font-heading text-[1.9rem] uppercase tracking-wide leading-tight mb-3">${service.title}</h3>
-            <p class="font-body text-white-pure/90 text-[1rem] leading-snug">${service.description}</p>
+            <span class="font-cursive">Harborshine</span>
+            <p class="h-medium font-semibold mb-3">${service.title}</p>
+            <p class="p-medium">${service.description}</p>
           </div>
         </article>
       `;

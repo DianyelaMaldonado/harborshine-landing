@@ -4,6 +4,7 @@ import "./css/style.css";
 // Import our custom component modules
 import { initNavigation } from "./js/navigation.js";
 import { initMarquee } from "./js/marquee.js";
+import { initServicesData } from "./js/services-data.js";
 
 /**
  * Async Component Loader to keep the HTML codebase componentized
@@ -38,4 +39,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 2. Trigger individual Javascript modules now that HTML exists
   initNavigation();
   initMarquee();
+  initServicesData();
 });

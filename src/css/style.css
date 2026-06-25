@@ -11,6 +11,7 @@
   --color-yellow-light: #f0d473;
   --color-deep-bg: #0d2327;
 
+  /* Refactored Typography Tokens Based on Style Guide */
   --font-heading: "Albert Sans", sans-serif;
   --font-body: "Albert Sans", sans-serif;
   --font-menu: "Albert Sans", sans-serif;
@@ -31,7 +32,7 @@ body {
 }
 
 /* -------------------------------------------------------------
-   TYPOGRAPHY Based on Style Guide Figma
+    TYPOGRAPHY Based on Style Guide Figma
    ------------------------------------------------------------- */
 
 /* H1 / Albert Sans Light: 86px | -1.5 tracking | 144 line-height */
@@ -54,7 +55,6 @@ h2 {
 /* H3 / Albert Sans Regular: 48px | 0 tracking | 72 line-height */
 h3 {
   font-family: var(--font-heading);
-  font-weight: 400;
   font-size: clamp(1.75rem, 3.5vw, 3rem);
   letter-spacing: 0em;
   line-height: 1.5;
@@ -62,7 +62,6 @@ h3 {
 /* HEADING VARIANT: 40px desktop -  heading */
 .h-medium {
   font-family: var(--font-heading);
-  font-weight: 400;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   letter-spacing: -0.005em;
   line-height: 1.4;
@@ -71,7 +70,6 @@ h3 {
 /* H4 / Albert Sans Regular: 34px | .25 tracking | 51 line-height */
 h4 {
   font-family: var(--font-heading);
-  font-weight: 400;
   font-size: clamp(1.5rem, 2.5vw, 2.125rem);
   letter-spacing: 0.007em;
   line-height: 1.5;
@@ -80,7 +78,6 @@ h4 {
 /* H5 / Albert Sans Regular: 24px | 0 tracking | 36 line-height */
 h5 {
   font-family: var(--font-heading);
-  font-weight: 400;
   font-size: 1.5rem;
   letter-spacing: 0em;
   line-height: 1.5;
@@ -97,25 +94,22 @@ h6 {
 /* VARIANT 1: Standard Body Paragraph (18px desktop) */
 p {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 1.125rem; /* 18px constant */
+  font-size: 1.125rem;
   letter-spacing: 0.027em;
-  line-height: 1.33; /* 24px / 18px */
+  line-height: 1.33;
 }
 
 /* VARIANT 2:layouts (24px desktop) */
 .p-medium {
   font-family: var(--font-body);
-  font-weight: 400;
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   letter-spacing: 0em;
-  line-height: 1.5; /* 36px / 24px */
+  line-height: 1.5;
 }
 
 /* VARIANT 3:  descriptions (32px desktop) */
 .p-large {
   font-family: var(--font-body);
-  font-weight: 400;
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   letter-spacing: -0.01em;
   line-height: 1.4;

@@ -30,7 +30,7 @@ export async function initServicesData() {
           </div>
           <div class="p-6 flex flex-col items-center text-center grow">
             <span class="font-cursive">Harborshine</span>
-            <p class="h-medium font-semibold mb-3">${service.title}</p>
+            <p class="h-medium  mb-3">${service.title}</p>
             <p class="p-medium">${service.description}</p>
           </div>
         </article>

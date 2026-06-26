@@ -16,6 +16,10 @@
   --font-body: 'Albert Sans', sans-serif;
   --font-menu: 'Albert Sans', sans-serif;
   --font-accent: 'Comforter', cursive;
+  --font-heading: "Albert Sans", sans-serif;
+  --font-body: "Albert Sans", sans-serif;
+  --font-menu: "Albert Sans", sans-serif;
+  --font-accent: "Comforter", cursive;
 }
 
 html {

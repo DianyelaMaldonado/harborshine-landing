@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Comforter&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Comforter&display=swap');
+@import 'tailwindcss';
 
 @theme {
   /* Brand Color Tokens */
@@ -12,6 +12,10 @@
   --color-deep-bg: #0d2327;
 
   /* Refactored Typography Tokens Based on Style Guide */
+  --font-heading: 'Albert Sans', sans-serif;
+  --font-body: 'Albert Sans', sans-serif;
+  --font-menu: 'Albert Sans', sans-serif;
+  --font-accent: 'Comforter', cursive;
   --font-heading: "Albert Sans", sans-serif;
   --font-body: "Albert Sans", sans-serif;
   --font-menu: "Albert Sans", sans-serif;
@@ -161,4 +165,13 @@ p {
   font-weight: 500;
   font-size: 1.125rem;
   letter-spacing: 0.01em;
+}
+
+/* Hero custom style */
+.main-hero {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 5.375rem);
+  letter-spacing: 0.05em;
+  line-height: 1;
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Comforter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Comforter&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -145,4 +145,13 @@ label {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   max-width: 1440px;
+}
+
+
+.main-hero {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 5.375rem);
+  letter-spacing: 0.05em;
+  line-height: 1;
 }

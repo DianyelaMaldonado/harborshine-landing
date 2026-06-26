@@ -115,13 +115,6 @@ p {
   line-height: 1.4;
 }
 
-label {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-}
-
 /* Accent font: Comforter Cursive */
 .font-cursive {
   font-family: var(--font-accent);
@@ -139,4 +132,33 @@ label {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   max-width: 1440px;
+}
+
+/* Form */
+@utility form-label {
+  font-family: var(--font-albert);
+  font-weight: 700;
+  font-size: 1rem; /* 20px estáticos */
+  letter-spacing: 0.01em;
+}
+
+@utility form-input {
+  font-family: var(--font-albert);
+  font-weight: 700;
+  font-size: 1rem; /* 20px estáticos */
+}
+
+@utility form-placeholder {
+  &::placeholder {
+    font-family: var(--font-albert);
+    font-weight: 700;
+    font-size: 1rem; /* 20px estáticos */
+  }
+}
+
+@utility form-hint {
+  font-family: var(--font-albert);
+  font-weight: 500;
+  font-size: 1.125rem;
+  letter-spacing: 0.01em;
 }

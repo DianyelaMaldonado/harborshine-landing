@@ -5,6 +5,7 @@ import { initNavigation } from "./js/navigation.js";
 import { initMarquee } from "./js/marquee.js";
 import { initServicesData } from "./js/services-data.js";
 import { initNestedSliders } from "./js/move-out-nested-slide.js";
+import { contactForm } from "./js/contact-form.js";
 
 /**
  * Async Component Loader to keep the HTML codebase componentized
@@ -72,4 +73,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initMarquee();
   initServicesData();
   initNestedSliders(); // Boots the master category engine and the multi-instanced inner sliders
+  contactForm();
 });

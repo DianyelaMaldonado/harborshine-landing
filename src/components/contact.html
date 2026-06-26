@@ -1,60 +1,117 @@
-<section id="contact" class="w-full py-16 bg-white-pure border-t-4 border-yellow-light">
-  <div class="container max-w-4xl flex flex-col items-center">
-    <h2>Contact Us</h2>
-    <p class="font-body text-base text-black mt-4 tracking-wide">Please Tell us how we can help you?</p>
+<section id="contact" class="relative w-full py-20 bg-cover bg-center bg-no-repeat"
+  style="background-image: linear-gradient(rgba(47, 140, 156, 0.68), rgba(30, 41, 59, 0.9)), url('/media/assets/images/mauriciomonteirofranca-broom-6310388_1280.jpg');"
+  aria-labelledby="contact-heading">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-    <form class="w-full mt-10 space-y-6 text-left max-w-3xl">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="flex flex-col gap-1.5">
-          <label for="first-name">First Name:</label>
-          <input type="text" id="first-name" placeholder="E.G. JANEE.G. JANE"
-            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
+      <!-- LEFT COLUMN -->
+      <div class="lg:col-span-4 bg-white-pure rounded-[30px] p-8 md:p-10 shadow-xl flex flex-col gap-8 font-albert">
+        <div class="text-center">
+          <p id="contact-heading" class="h-medium uppercase inline-block border-b-[5px] border-cyan-brand pb-0.5">
+            Contact Us
+          </p>
         </div>
-        <div class="flex flex-col gap-1.5">
-          <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name" placeholder="E.G. DOE"
-            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
+
+        <!-- Phone Detail Row -->
+        <div class="flex items-center gap-5 ">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+            <img src="/media/icons/i-phone.png" alt="" class="w-14 h-14 object-contain" aria-hidden="true">
+          </div>
+          <a href="tel:6197128080"
+            class="text-[20px] font-bold text-dark-slate hover:text-cyan-brand-dark transition-colors duration-200"
+            aria-label="Call us at 619-712-8080">
+            619 712 8080
+          </a>
+        </div>
+
+        <!-- Address Detail Row -->
+        <div class="flex items-start gap-5 text-left">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 mt-1">
+            <img src="/media/icons/i-location.png" alt="" class="w-10 h-10 object-contain" aria-hidden="true">
+          </div>
+          <a href="/#"
+            class="text-[20px] font-bold text-dark-slate hover:text-cyan-brand-dark transition-colors duration-200"
+            aria-label="Open our location on Google Maps: 2298 Williams Avenue Newhall, California 91321">
+            2298 Williams Avenue Newhall<br>California 91321
+          </a>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="flex flex-col gap-1.5">
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" placeholder="E.G. +1 555-000-0000"
-            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
-        </div>
-        <div class="flex flex-col gap-1.5">
-          <label for="email">Email:</label>
-          <input type="email" id="email" placeholder="E.G. JANE.DOE@EXAMPLE.COM"
-            class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none">
-        </div>
-      </div>
+      <!-- RIGHT COLUMN -->
+      <div class="lg:col-span-8 bg-white-pure rounded-[30px] p-8 md:p-10 shadow-xl">
+        <form id="contact-form" action="#" method="POST" class="flex flex-col gap-6" novalidate>
+          <div id="success-message"
+            class="hidden bg-dark-slate border text-center text-white font-bold  rounded-[15px] py-2.5">
+            <span class="uppercase text-yellow-gold border-l-indigo-50">¡Message sent successfully!</span>
+            <br>
+            <span> Thank you for contacting Harborshine Co.</span>
+          </div>
 
-      <div class="flex flex-col gap-1.5">
-        <label for="message">Message:</label>
-        <textarea id="message" rows="5" placeholder="WRITE YOUR MESSAGE HERE..."
-          class="w-full px-4 py-3 bg-dark-slate text-white-pure font-heading uppercase text-xs tracking-wider placeholder:text-white-pure/40 border-none outline-none resize-none"></textarea>
-      </div>
-    </form>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- First Name Field (REQUIRED) -->
+            <div class="flex flex-col gap-2 text-left">
+              <label for="first-name" class="form-label uppercase tracking-wider text-dark-slate">
+                First Name:
+              </label>
+              <input type="text" id="first-name" name="first-name" placeholder="E.G. JANE" required aria-required="true"
+                class="form-input form-placeholder w-full text-dark-slate bg-gray-200 placeholder-dark-slate/40 px-5 py-4 rounded-[15px] border border-transparent focus:outline-none focus:border-cyan-brand focus:bg-white-pure transition-all duration-200 uppercase">
+              <span id="error-first-name" class="form-hint text-red-600 hidden">Please complete this field, your first
+                name is required.</span>
+            </div>
 
-    <!-- Social Connections Layout Block -->
-    <div
-      class="w-full max-w-3xl mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center border-t border-dark-slate/10 pt-8 font-heading text-dark-slate tracking-wider uppercase">
-      <div class="flex flex-col items-center sm:items-start gap-3">
-        <span>Follow Us:</span>
-        <div class="flex gap-4">
-          <a href="#" class="w-11 h-11"><img src="/media/facebook-icon.png" alt="Facebook"
-              class="w-full h-full object-contain"></a>
-          <a href="#" class="w-11 h-11"><img src="/media/instagram-icon.png" alt="Instagram"
-              class="w-full h-full object-contain"></a>
-        </div>
-      </div>
-      <div class="flex flex-col items-center sm:items-end gap-2">
-        <span>Call Us:</span>
-        <a href="tel:6197128080" class="flex items-center gap-3 text-lg font-body font-normal text-black normal-case">
-          <img src="/media/phone-icon.png" alt="Phone" class="w-8 h-8 object-contain">
-          <span>619 712 8080</span>
-        </a>
+            <!-- Last Name Field -->
+            <div class="flex flex-col gap-2 text-left">
+              <label for="last-name" class="form-label uppercase tracking-wider text-dark-slate">
+                Last Name:
+              </label>
+              <input type="text" id="last-name" name="last-name" placeholder="E.G. DOE"
+                class="form-input form-placeholder w-full text-dark-slate bg-gray-200 placeholder-dark-slate/40 px-5 py-4 rounded-[15px] border border-transparent focus:outline-none focus:border-cyan-brand focus:bg-white-pure transition-all duration-200 uppercase">
+            </div>
+          </div>
+
+          <!-- ROW 2: Phone & Email in parallel from md up -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Phone Field -->
+            <div class="flex flex-col gap-2 text-left">
+              <label for="phone" class="form-label uppercase tracking-wider text-dark-slate">
+                Phone:
+              </label>
+              <input type="tel" id="phone" name="phone" placeholder="E.G. +1 555-000-0000" pattern="[0-9]{10,15}"
+                class="w-full text-dark-slate bg-gray-200 placeholder-dark-slate/40 px-5 py-4 rounded-[15px] border border-transparent focus:outline-none focus:border-cyan-brand focus:bg-white-pure transition-all duration-200 uppercase form-input form-placeholder">
+              <span id="error-phone" class="form-hint text-red-600 hidden">Please enter a valid phone number format (10
+                to 15 digits).</span>
+            </div>
+
+            <!-- Email Field (REQUIRED) -->
+            <div class="flex flex-col gap-2 text-left">
+              <label for="email" class="form-label uppercase tracking-wider text-dark-slate">
+                Email:
+              </label>
+              <input type="email" id="email" name="email" placeholder="E.G. JANE.DOE@EXAMPLE.COM" required
+                aria-required="true"
+                class="form-input form-placeholder w-full text-dark-slate bg-gray-200 placeholder-dark-slate/40 px-5 py-4 rounded-[15px] border border-transparent focus:outline-none focus:border-cyan-brand focus:bg-white-pure transition-all duration-200 uppercase">
+              <span id="error-email" class="form-hint text-red-600 hidden">Please enter a valid email address. This
+                field is required.</span>
+            </div>
+          </div>
+
+          <!-- ROW 3: Full Width Message Field -->
+          <div class="flex flex-col gap-2 text-left">
+            <label for="message" class="form-label uppercase tracking-wider text-dark-slate">
+              Message:
+            </label>
+            <textarea id="message" name="message" rows="4" placeholder="WRITE YOUR MESSAGE HERE..."
+              class="form-input form-placeholder w-full text-dark-slate bg-gray-200 placeholder-dark-slate/40 px-5 py-4 rounded-[15px] border border-transparent focus:outline-none focus:border-cyan-brand focus:bg-white-pure transition-all duration-200 uppercase resize-none"></textarea>
+          </div>
+
+          <!-- SUBMIT BUTTON -->
+          <div class="text-left mt-4">
+            <button type="submit" aria-label="Submit contact form"
+              class="inline-block px-5 py-1 rounded-md bg-yellow-light text-dark-slate font-sans font-bold text-[1.35rem] tracking-wide uppercase cursor-pointer shadow-[inset_0_0_0_0_var(--color-dark-slate)] hover:text-yellow-light hover:shadow-[inset_300px_0_0_0_var(--color-dark-slate)] transition-all duration-500 ease-out">
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

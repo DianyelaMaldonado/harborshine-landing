@@ -12,10 +12,6 @@
   --color-deep-bg: #0d2327;
 
   /* Refactored Typography Tokens Based on Style Guide */
-  --font-heading: 'Albert Sans', sans-serif;
-  --font-body: 'Albert Sans', sans-serif;
-  --font-menu: 'Albert Sans', sans-serif;
-  --font-accent: 'Comforter', cursive;
   --font-heading: "Albert Sans", sans-serif;
   --font-body: "Albert Sans", sans-serif;
   --font-menu: "Albert Sans", sans-serif;
@@ -42,7 +38,6 @@ body {
 /* H1 / Albert Sans Light: 86px | -1.5 tracking | 144 line-height */
 h1 {
   font-family: var(--font-heading);
-  font-weight: 300;
   font-size: clamp(2.5rem, 5vw, 5.375rem);
   line-height: 1.67;
 }
@@ -50,10 +45,9 @@ h1 {
 /* H2 / Albert Sans Light: 60px | -.5 tracking | 90 line-height */
 h2 {
   font-family: var(--font-heading);
-  font-weight: 300;
   font-size: clamp(2rem, 4vw, 3.75rem);
-  letter-spacing: -0.008em;
-  line-height: 1.5;
+  letter-spacing: 0.05em;
+  line-height: 1;
 }
 
 /* H3 / Albert Sans Regular: 48px | 0 tracking | 72 line-height */
@@ -90,7 +84,6 @@ h5 {
 /* H6 / Albert Sans SemiBold: 20px | .25 tracking | 30 line-height */
 h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
   font-size: 1.25rem;
   letter-spacing: 0.0125em;
   line-height: 1.5;
@@ -165,13 +158,4 @@ p {
   font-weight: 500;
   font-size: 1.125rem;
   letter-spacing: 0.01em;
-}
-
-/* Hero custom style */
-.main-hero {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: clamp(2.5rem, 5vw, 5.375rem);
-  letter-spacing: 0.05em;
-  line-height: 1;
 }

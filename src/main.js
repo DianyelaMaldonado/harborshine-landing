@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadComponent(
       "move-out-root",
       "/src/components/move-out-nested-slide.html",
-    ), // Structural Shell
+    ),
     loadComponent("coverage-root", "/src/components/coverage.html"),
+    loadComponent("reviews-root", "/src/components/reviews.html"),
     loadComponent("contact-root", "/src/components/contact.html"),
     loadComponent("footer-root", "/src/components/footer.html"),
   ]);

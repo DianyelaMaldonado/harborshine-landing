@@ -1,24 +1,26 @@
 <section id="contact" class="relative w-full py-20 bg-cover bg-center bg-no-repeat"
-  style="background-image: linear-gradient(rgba(47, 140, 156, 0.68), rgba(30, 41, 59, 0.9)), url('/media/assets/images/mauriciomonteirofranca-broom-6310388_1280.jpg');"
+  style="background-image: linear-gradient(rgba(0, 180, 216, 0.2), rgba(30, 41, 59, 0.85)), url('/media/assets/contact-bg.jpg');"
   aria-labelledby="contact-heading">
   <div class="container mx-auto px-4 max-w-6xl">
+
+    <!-- Column Master Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-      <!-- LEFT COLUMN -->
+      <!-- LEFT COLUMN-->
       <div class="lg:col-span-4 bg-white-pure rounded-[30px] p-8 md:p-10 shadow-xl flex flex-col gap-8 font-albert">
-        <div class="text-center">
+        <div class="text-center lg:text-left">
           <p id="contact-heading" class="h-medium uppercase inline-block border-b-[5px] border-cyan-brand pb-0.5">
             Contact Us
           </p>
         </div>
 
         <!-- Phone Detail Row -->
-        <div class="flex items-center gap-5 ">
+        <div class="flex items-center gap-5 text-left">
           <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0">
             <img src="/media/icons/i-phone.png" alt="" class="w-14 h-14 object-contain" aria-hidden="true">
           </div>
           <a href="tel:6197128080"
-            class="text-[20px] font-bold text-dark-slate hover:text-cyan-brand-dark transition-colors duration-200"
+            class="p-medium font-bold text-dark-slate hover:text-cyan-brand-dark transition-colors duration-200"
             aria-label="Call us at 619-712-8080">
             619 712 8080
           </a>
@@ -30,7 +32,7 @@
             <img src="/media/icons/i-location.png" alt="" class="w-10 h-10 object-contain" aria-hidden="true">
           </div>
           <a href="/#"
-            class="text-[20px] font-bold text-dark-slate hover:text-cyan-brand-dark transition-colors duration-200"
+            class="p-medium font-bold text-dark-slate hover:text-cyan-brand-dark transition-colors duration-200"
             aria-label="Open our location on Google Maps: 2298 Williams Avenue Newhall, California 91321">
             2298 Williams Avenue Newhall<br>California 91321
           </a>
@@ -39,7 +41,12 @@
 
       <!-- RIGHT COLUMN -->
       <div class="lg:col-span-8 bg-white-pure rounded-[30px] p-8 md:p-10 shadow-xl">
-        <form id="contact-form" action="#" method="POST" class="flex flex-col gap-6" novalidate>
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6"
+          novalidate>
+
+          <!--  Web3Forms Access Key Token Injection -->
+          <input type="hidden" name="access_key" value="223c4a1f-bb94-491b-96f2-5c9586c0f79c">
+
           <div id="success-message"
             class="hidden bg-dark-slate border text-center text-white font-bold  rounded-[15px] py-2.5">
             <span class="uppercase text-yellow-gold border-l-indigo-50">¡Message sent successfully!</span>
@@ -47,6 +54,7 @@
             <span> Thank you for contacting Harborshine Co.</span>
           </div>
 
+          <!-- ROW 1: First Name & Last Name in parallel from md up -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- First Name Field (REQUIRED) -->
             <div class="flex flex-col gap-2 text-left">

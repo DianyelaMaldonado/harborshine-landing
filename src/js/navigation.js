@@ -9,8 +9,6 @@ export function initNavigation() {
   window.Alpine = Alpine;
   Alpine.start();
 
-  console.log("✨ Navigation Module: Alpine.js successfully initialized.");
-
   // Inject our high-performance animation controller engine
   initPremiumNavbarEngine();
 }

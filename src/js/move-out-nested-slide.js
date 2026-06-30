@@ -5,9 +5,6 @@ export function initNestedSliders() {
   setTimeout(() => {
     const outerElement = document.getElementById("outer-slider");
     if (!outerElement) {
-      console.warn(
-        "⚠️ Outer Slider parent target missing from DOM layout. Retrying...",
-      );
       return;
     }
 
@@ -26,7 +23,6 @@ export function initNestedSliders() {
     const innerElements = document.querySelectorAll(".inner-slider");
 
     if (innerElements.length === 0) {
-      console.warn("⚠️ No inner-slider classes found in the DOM yet.");
       return;
     }
 
@@ -54,9 +50,5 @@ export function initNestedSliders() {
 
       innerSlider.mount();
     });
-
-    console.log(
-      "🚀 Multi-nested accessible slide logic initialized completely.",
-    );
   }, 300);
 }

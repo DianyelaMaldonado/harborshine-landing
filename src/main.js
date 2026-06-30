@@ -6,6 +6,9 @@ import { initMarquee } from "./js/marquee.js";
 import { initServicesData } from "./js/services-data.js";
 import { initNestedSliders } from "./js/move-out-nested-slide.js";
 import { contactForm } from "./js/contact-form.js";
+import { initRevealLeftToRightStaggerOnScroll } from "./js/animations/reveal-left-to-right-stagger-on-scroll.js";
+import { initParallaxScrollUpAndDown } from "./js/animations/paralax-scroll-up-and-down.js";
+import { initFadeInUp } from "./js/animations/fade-in-up.js";
 
 /**
  * Async Component Loader to keep the HTML codebase componentized
@@ -75,4 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initServicesData();
   initNestedSliders(); // Boots the master category engine and the multi-instanced inner sliders
   contactForm();
+  initRevealLeftToRightStaggerOnScroll();
+  initParallaxScrollUpAndDown();
+  initFadeInUp();
 });

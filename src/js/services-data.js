@@ -1,9 +1,9 @@
+// Import the rebranded utility layout script into your content generation file
+import { initRevealLeftToRightStaggerOnScroll } from "./animations/reveal-left-to-right-stagger-on-scroll";
+
 export async function initServicesData() {
   const container = document.getElementById("services-container");
   if (!container) {
-    console.warn(
-      "⚠️ Services Module: Target '#services-container' not found in DOM yet.",
-    );
     return;
   }
 
@@ -23,8 +23,9 @@ export async function initServicesData() {
           ? "md:col-span-2 lg:col-span-1"
           : "";
 
+        // Inject the generic attribute data-animate="stagger-item" to any element you want to chain
         return `
-        <article class="w-full bg-cyan-brand-dark text-white-pure rounded-[30px] overflow-hidden shadow-md flex flex-col ${featuredClass}">
+        <article data-animate="stagger-item" class="w-full bg-cyan-brand-dark text-white-pure rounded-[30px] overflow-hidden shadow-md flex flex-col ${featuredClass}">
           <div class="w-full h-55 overflow-hidden relative">
             <img src="${service.image}" alt="${service.alt}" class="w-full h-full object-cover">
           </div>
@@ -43,6 +44,9 @@ export async function initServicesData() {
     console.log(
       "📦 Services Module: 7 Premium cards successfully rendered from JSON.",
     );
+
+    // 4. Trigger the layout calculations using the universal utility script
+    initRevealLeftToRightStaggerOnScroll();
   } catch (error) {
     console.error("❌ Services engine template failure:", error);
   }

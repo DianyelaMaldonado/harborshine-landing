@@ -185,14 +185,12 @@ function initPremiumNavbarEngine() {
   // TRANSITION HANDLERS: CLOSE ENGINE
   // ---------------------------------------------------------------------------
   const closeMenu = () => {
-    if (currentActiveTimeline) currentActiveTimeline.kill();
-
-    currentActiveTimeline = gsap.timeline({
-      onComplete: () => {
         unlockScroll();
         resetMobileMenuStyles();
-      },
-    });
+        
+    if (currentActiveTimeline) currentActiveTimeline.kill();
+
+    currentActiveTimeline = gsap.timeline();
 
     currentActiveTimeline
       .to(mobileMenuItems, {

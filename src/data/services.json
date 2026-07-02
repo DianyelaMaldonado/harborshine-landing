@@ -1,49 +1,49 @@
 [
   {
     "title": "Standard Cleaning",
-    "image": "/media/assets/move-out-1/20260401_150745.jpg",
+    "image": "media/assets/move-out-1/20260401_150745.jpg",
     "alt": "Cozy living room with a grey sofa perfectly cleaned",
     "description": "Routine cleaning to keep your home fresh, tidy, and sparkling on a regular basis.",
     "featured": false
   },
   {
     "title": "Deep Cleaning",
-    "image": "/media/assets/move-out-6/20240714_150918.jpg",
+    "image": "media/assets/move-out-6/20240714_150918.jpg",
     "alt": "Deep cleaned home interior showing pristine details",
     "description": "A thorough, detailed scrub targeting hard-to-reach areas for a complete refresh.",
     "featured": false
   },
   {
     "title": "Vacations Rentals",
-    "image": "/media/assets/move-out-6/20240715_145836.jpg",
+    "image": "media/assets/move-out-6/20240715_145836.jpg",
     "alt": "Immaculate guest bedroom ready for check-in",
     "description": "Fast and immaculate turnovers designed to earn your property 5-star guest reviews.",
     "featured": false
   },
   {
     "title": "Office & Commercial Cleaning",
-    "image": "/media/assets/move-out-3/image-8.jpg",
+    "image": "media/assets/move-out-3/image-8.jpg",
     "alt": "Modern clean office workspace layout",
     "description": "Professional cleaning solutions to maintain a pristine, healthy, and dynamic workspace.",
     "featured": false
   },
   {
     "title": "Pressure Washing",
-    "image": "/media/assets/move-out-2/20250719_114426.jpg",
+    "image": "media/assets/move-out-2/20250719_114426.jpg",
     "alt": "Clean patio driveway after professional pressure washing",
     "description": "High-powered exterior washing to remove tough dirt from driveways, patios, and walls.",
     "featured": false
   },
   {
     "title": "Move Out & In Specials",
-    "image": "/media/assets/move-out-6/20240715_145836.jpg",
+    "image": "media/assets/move-out-6/20240715_145836.jpg",
     "alt": "Empty clean apartment rooms ready for new tenants",
     "description": "Comprehensive deep cleanings to ensure apartments and homes are ready for new beginnings.",
     "featured": false
   },
   {
     "title": "Customized Cleaning Plans",
-    "image": "/media/assets/move-out-2/20250719_114407_01.jpg",
+    "image": "media/assets/move-out-2/20250719_114407_01.jpg",
     "alt": "Detailed checklist layout for professional cleaning",
     "description": "Tailored cleaning checklists designed entirely around your space's specific needs.",
     "featured": true

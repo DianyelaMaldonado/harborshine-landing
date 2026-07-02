@@ -3,9 +3,6 @@ import { gsap } from "gsap";
 export function initMarquee() {
   const track = document.getElementById("marquee-track");
   if (!track) {
-    console.warn(
-      "⚠️ Marquee Module: Target '#marquee-track' container not found.",
-    );
     return;
   }
 

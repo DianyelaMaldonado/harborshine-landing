@@ -9,8 +9,6 @@ export function initNavigation() {
   window.Alpine = Alpine;
   Alpine.start();
 
-  console.log("✨ Navigation Module: Alpine.js successfully initialized.");
-
   // Inject our high-performance animation controller engine
   initPremiumNavbarEngine();
 }
@@ -187,14 +185,12 @@ function initPremiumNavbarEngine() {
   // TRANSITION HANDLERS: CLOSE ENGINE
   // ---------------------------------------------------------------------------
   const closeMenu = () => {
-    if (currentActiveTimeline) currentActiveTimeline.kill();
-
-    currentActiveTimeline = gsap.timeline({
-      onComplete: () => {
         unlockScroll();
         resetMobileMenuStyles();
-      },
-    });
+        
+    if (currentActiveTimeline) currentActiveTimeline.kill();
+
+    currentActiveTimeline = gsap.timeline();
 
     currentActiveTimeline
       .to(mobileMenuItems, {

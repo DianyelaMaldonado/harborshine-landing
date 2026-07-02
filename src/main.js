@@ -10,6 +10,16 @@ import { initRevealLeftToRightStaggerOnScroll } from "./js/animations/reveal-lef
 import { initParallaxScrollUpAndDown } from "./js/animations/paralax-scroll-up-and-down.js";
 import { initFadeInUp } from "./js/animations/fade-in-up.js";
 
+const BASE = import.meta.env.BASE_URL || "/";
+
+/**
+ * Resolves absolute paths (e.g., /media/...) within fetched HTML
+ * so they work with the GitHub Pages base URL in production.
+ */
+function resolveTemplatePaths(html) {
+  return html.replace(/(src|href|poster)="\/(?!\/|#)/g, `$1="${BASE}`);
+}
+
 /**
  * Async Component Loader to keep the HTML codebase componentized
  */
@@ -18,7 +28,8 @@ async function loadComponent(targetId, componentPath) {
     const response = await fetch(componentPath);
     if (!response.ok)
       throw new Error(`Failed to fetch component: ${componentPath}`);
-    const html = await response.text();
+    let html = await response.text();
+    html = resolveTemplatePaths(html);
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       targetElement.innerHTML = html;
@@ -34,20 +45,20 @@ async function loadComponent(targetId, componentPath) {
 document.addEventListener("DOMContentLoaded", async () => {
   // 1. Inject global structural page layouts first (The main containers)
   await Promise.all([
-    loadComponent("navigation-root", "/src/components/navigation.html"),
-    loadComponent("hero-root", "/src/components/hero.html"),
-    loadComponent("marquee-root", "/src/components/marquee.html"),
-    loadComponent("intro-root", "/src/components/intro.html"),
-    loadComponent("services-root", "/src/components/services.html"),
-    loadComponent("about-root", "/src/components/about.html"),
+    loadComponent("navigation-root", `${BASE}templates/navigation.html`),
+    loadComponent("hero-root", `${BASE}templates/hero.html`),
+    loadComponent("marquee-root", `${BASE}templates/marquee.html`),
+    loadComponent("intro-root", `${BASE}templates/intro.html`),
+    loadComponent("services-root", `${BASE}templates/services.html`),
+    loadComponent("about-root", `${BASE}templates/about.html`),
     loadComponent(
       "move-out-root",
-      "/src/components/move-out-nested-slide.html",
+      `${BASE}templates/move-out-nested-slide.html`,
     ),
-    loadComponent("coverage-root", "/src/components/coverage.html"),
-    loadComponent("reviews-root", "/src/components/reviews.html"),
-    loadComponent("contact-root", "/src/components/contact.html"),
-    loadComponent("footer-root", "/src/components/footer.html"),
+    loadComponent("coverage-root", `${BASE}templates/coverage.html`),
+    loadComponent("reviews-root", `${BASE}templates/reviews.html`),
+    loadComponent("contact-root", `${BASE}templates/contact.html`),
+    loadComponent("footer-root", `${BASE}templates/footer.html`),
   ]);
 
   console.log("✨ Global HTML layouts successfully injected into the DOM.");
@@ -56,15 +67,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   await Promise.all([
     loadComponent(
       "bathroom-target",
-      "/src/components/before-and-after/bathroom.html",
+      `${BASE}templates/before-and-after/bathroom.html`,
     ),
     loadComponent(
       "kitchen-target",
-      "/src/components/before-and-after/kitchen.html",
+      `${BASE}templates/before-and-after/kitchen.html`,
     ),
     loadComponent(
       "deep-cleaning-target",
-      "/src/components/before-and-after/deep-cleaning-01.html",
+      `${BASE}templates/before-and-after/deep-cleaning-01.html`,
     ),
   ]);
 

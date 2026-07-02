@@ -1,6 +1,12 @@
 // Import the rebranded utility layout script into your content generation file
 import { initRevealLeftToRightStaggerOnScroll } from "./animations/reveal-left-to-right-stagger-on-scroll";
 
+const BASE = import.meta.env.BASE_URL || "/";
+
+function resolveImagePath(path) {
+  return path.startsWith("/") ? `${BASE}${path.slice(1)}` : path;
+}
+
 export async function initServicesData() {
   const container = document.getElementById("services-container");
   if (!container) {
@@ -9,7 +15,7 @@ export async function initServicesData() {
 
   try {
     // 1. Fetch data from our custom decoupled JSON file
-    const response = await fetch("/src/data/services.json");
+    const response = await fetch(`${BASE}data/services.json`);
     if (!response.ok)
       throw new Error("Failed to load services JSON data source.");
 
@@ -27,7 +33,7 @@ export async function initServicesData() {
         return `
         <article data-animate="stagger-item" class="w-full bg-cyan-brand-dark text-white-pure rounded-[30px] overflow-hidden shadow-md flex flex-col ${featuredClass}">
           <div class="w-full h-55 overflow-hidden relative">
-            <img src="${service.image}" alt="${service.alt}" class="w-full h-full object-cover">
+            <img src="${resolveImagePath(service.image)}" alt="${service.alt}" class="w-full h-full object-cover">
           </div>
           <div class="p-6 flex flex-col items-center text-center grow">
             <span class="font-cursive">Harborshine</span>

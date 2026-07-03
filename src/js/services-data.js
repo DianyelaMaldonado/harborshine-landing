@@ -1,27 +1,21 @@
 // Import the rebranded utility layout script into your content generation file
-import { initRevealLeftToRightStaggerOnScroll } from "./animations/reveal-left-to-right-stagger-on-scroll";
+import { initRevealLeftToRightStaggerOnScroll } from './animations/reveal-left-to-right-stagger-on-scroll';
+import services from '../data/services.json';
 
 export async function initServicesData() {
-  const container = document.getElementById("services-container");
+  const container = document.getElementById('services-container');
   if (!container) {
     return;
   }
 
   try {
-    // 1. Fetch data from our custom decoupled JSON file
-    const response = await fetch("/src/data/services.json");
-    if (!response.ok)
-      throw new Error("Failed to load services JSON data source.");
-
-    const services = await response.json();
-
-    // 2. Loop through the array and construct the HTML string dynamically
+    // 1. Loop through the array and construct the HTML string dynamically
     const cardsHtml = services
       .map((service) => {
         // Evaluate if the card should span across multiple columns on tablet viewports
         const featuredClass = service.featured
-          ? "md:col-span-2 lg:col-span-1"
-          : "";
+          ? 'md:col-span-2 lg:col-span-1'
+          : '';
 
         // Inject the generic attribute data-animate="stagger-item" to any element you want to chain
         return `
@@ -37,17 +31,17 @@ export async function initServicesData() {
         </article>
       `;
       })
-      .join(""); // Merges the array into a single clean string
+      .join(''); // Merges the array into a single clean string
 
-    // 3. Inject the complete string into the container DOM node
+    // 2. Inject the complete string into the container DOM node
     container.innerHTML = cardsHtml;
     console.log(
-      "📦 Services Module: 7 Premium cards successfully rendered from JSON.",
+      '📦 Services Module: 7 Premium cards successfully rendered from JSON.',
     );
 
-    // 4. Trigger the layout calculations using the universal utility script
+    // 3. Trigger the layout calculations using the universal utility script
     initRevealLeftToRightStaggerOnScroll();
   } catch (error) {
-    console.error("❌ Services engine template failure:", error);
+    console.error('❌ Services engine template failure:', error);
   }
 }

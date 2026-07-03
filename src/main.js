@@ -10,21 +10,29 @@ import { initRevealLeftToRightStaggerOnScroll } from "./js/animations/reveal-lef
 import { initParallaxScrollUpAndDown } from "./js/animations/paralax-scroll-up-and-down.js";
 import { initFadeInUp } from "./js/animations/fade-in-up.js";
 
+import navigationHtml from "./components/navigation.html?raw";
+import heroHtml from "./components/hero.html?raw";
+import marqueeHtml from "./components/marquee.html?raw";
+import servicesHtml from "./components/services.html?raw";
+import aboutHtml from "./components/about.html?raw";
+import moveOutHtml from "./components/move-out-nested-slide.html?raw";
+import coverageHtml from "./components/coverage.html?raw";
+import reviewsHtml from "./components/reviews.html?raw";
+import contactHtml from "./components/contact.html?raw";
+import footerHtml from "./components/footer.html?raw";
+import bathroomHtml from "./components/before-and-after/bathroom.html?raw";
+import kitchenHtml from "./components/before-and-after/kitchen.html?raw";
+import deepCleaningHtml from "./components/before-and-after/deep-cleaning-01.html?raw";
+
 /**
- * Async Component Loader to keep the HTML codebase componentized
+ * Component Loader to keep the HTML codebase componentized.
+ * Vite does not publish /src as static files in production, so components are
+ * imported as raw HTML and injected after the bundle loads.
  */
-async function loadComponent(targetId, componentPath) {
-  try {
-    const response = await fetch(componentPath);
-    if (!response.ok)
-      throw new Error(`Failed to fetch component: ${componentPath}`);
-    const html = await response.text();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.innerHTML = html;
-    }
-  } catch (error) {
-    console.error(`❌ Layout engine error:`, error);
+function loadComponent(targetId, html) {
+  const targetElement = document.getElementById(targetId);
+  if (targetElement) {
+    targetElement.innerHTML = html;
   }
 }
 
@@ -33,40 +41,23 @@ async function loadComponent(targetId, componentPath) {
  */
 document.addEventListener("DOMContentLoaded", async () => {
   // 1. Inject global structural page layouts first (The main containers)
-  await Promise.all([
-    loadComponent("navigation-root", "/src/components/navigation.html"),
-    loadComponent("hero-root", "/src/components/hero.html"),
-    loadComponent("marquee-root", "/src/components/marquee.html"),
-    loadComponent("intro-root", "/src/components/intro.html"),
-    loadComponent("services-root", "/src/components/services.html"),
-    loadComponent("about-root", "/src/components/about.html"),
-    loadComponent(
-      "move-out-root",
-      "/src/components/move-out-nested-slide.html",
-    ),
-    loadComponent("coverage-root", "/src/components/coverage.html"),
-    loadComponent("reviews-root", "/src/components/reviews.html"),
-    loadComponent("contact-root", "/src/components/contact.html"),
-    loadComponent("footer-root", "/src/components/footer.html"),
-  ]);
+  loadComponent("navigation-root", navigationHtml);
+  loadComponent("hero-root", heroHtml);
+  loadComponent("marquee-root", marqueeHtml);
+  loadComponent("services-root", servicesHtml);
+  loadComponent("about-root", aboutHtml);
+  loadComponent("move-out-root", moveOutHtml);
+  loadComponent("coverage-root", coverageHtml);
+  loadComponent("reviews-root", reviewsHtml);
+  loadComponent("contact-root", contactHtml);
+  loadComponent("footer-root", footerHtml);
 
   console.log("✨ Global HTML layouts successfully injected into the DOM.");
 
   // 2. Inject nested sub-components inside the structural shell before JavaScript boots up
-  await Promise.all([
-    loadComponent(
-      "bathroom-target",
-      "/src/components/before-and-after/bathroom.html",
-    ),
-    loadComponent(
-      "kitchen-target",
-      "/src/components/before-and-after/kitchen.html",
-    ),
-    loadComponent(
-      "deep-cleaning-target",
-      "/src/components/before-and-after/deep-cleaning-01.html",
-    ),
-  ]);
+  loadComponent("bathroom-target", bathroomHtml);
+  loadComponent("kitchen-target", kitchenHtml);
+  loadComponent("deep-cleaning-target", deepCleaningHtml);
 
   console.log(
     "📦 All nested before/after slides successfully mounted inside sub-roots.",

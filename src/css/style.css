@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Comforter&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Comforter&display=swap");
+@import "tailwindcss";
 
 @theme {
   /* Brand Color Tokens */
@@ -159,3 +159,5 @@ p {
   font-size: 1.125rem;
   letter-spacing: 0.01em;
 }
+
+@custom-variant phone-landscape (@media (orientation: landscape) and (max-height: 450px));

@@ -66,6 +66,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       "deep-cleaning-target",
       "/src/components/before-and-after/deep-cleaning-01.html",
     ),
+    loadComponent(
+      "move-out-cleaning-ready-move-in",
+      "/src/components/before-and-after/move-out-cleaning-ready-move-in.html"
+    ),
   ]);
 
   console.log(

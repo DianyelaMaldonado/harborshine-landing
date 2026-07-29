@@ -70,6 +70,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       "move-out-cleaning-ready-move-in",
       "/src/components/before-and-after/move-out-cleaning-ready-move-in.html"
     ),
+    loadComponent(
+      "move-out-ready-move-in-junk-removal",
+      "/src/components/before-and-after/move-out-ready-move-in-junk-removal.html"
+    ),
   ]);
 
   console.log(

@@ -52,8 +52,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadComponent("footer-root", "/src/components/footer.html"),
   ]);
 
-  console.log("✨ Global HTML layouts successfully injected into the DOM.");
-
   // 2. Inject nested sub-components inside the structural shell before JavaScript boots up
   await Promise.all([
     loadComponent(

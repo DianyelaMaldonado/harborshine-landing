@@ -1,4 +1,3 @@
-// Import the rebranded utility layout script into your content generation file
 import { initRevealLeftToRightStaggerOnScroll } from "./animations/reveal-left-to-right-stagger-on-scroll";
 
 export async function initServicesData() {
@@ -8,30 +7,46 @@ export async function initServicesData() {
   }
 
   try {
-    // 1. Fetch data from our custom decoupled JSON file
     const response = await fetch("/src/data/services.json");
     if (!response.ok)
       throw new Error("Failed to load services JSON data source.");
 
     const services = await response.json();
 
-    // 2. Loop through the array and construct the HTML string dynamically
     const cardsHtml = services
       .map((service) => {
-        // Evaluate if the card should span across multiple columns on tablet viewports
         const featuredClass = service.featured
           ? "md:col-span-2 lg:col-span-1"
           : "";
+        let imageSectionHtml = "";
 
-        // Inject the generic attribute data-animate="stagger-item" to any element you want to chain
+        if (Array.isArray(service.image)) {
+          imageSectionHtml = `
+            <div class="w-full h-55 overflow-hidden relative flex flex-row">
+              <div class="w-1/2 h-full relative border-r border-white-pure/20">
+                <img src="${service.image[0]}" alt="Before - ${service.alt}" class="w-full h-full object-cover">
+                <span class="absolute bottom-2 left-2 bg-dark-slate/80 text-white-pure text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wider backdrop-blur-sm">Before</span>
+              </div>
+              <div class="w-1/2 h-full relative">
+                <img src="${service.image[1]}" alt="After - ${service.alt}" class="w-full h-full object-cover">
+                <span class="absolute bottom-2 right-2 bg-yellow-gold text-dark-slate text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wider">After</span>
+              </div>
+            </div>
+          `;
+        } else {
+          imageSectionHtml = `
+            <div class="w-full h-55 overflow-hidden relative">
+              <img src="${service.image}" alt="${service.alt}" class="w-full h-full object-cover">
+            </div>
+          `;
+        }
+
         return `
         <article data-animate="stagger-item" class="w-full bg-cyan-brand-dark text-white-pure rounded-[30px] overflow-hidden shadow-md flex flex-col ${featuredClass}">
-          <div class="w-full h-55 overflow-hidden relative">
-            <img src="${service.image}" alt="${service.alt}" class="w-full h-full object-cover">
-          </div>
+          ${imageSectionHtml}
           <div class="p-6 flex flex-col items-center text-center grow">
             <span class="font-cursive">Harborshine</span>
-            <p class="h-medium  mb-3">${service.title}</p>
+            <p class="h-medium mb-3">${service.title}</p>
             <p class="p-medium">${service.description}</p>
           </div>
         </article>
@@ -39,10 +54,7 @@ export async function initServicesData() {
       })
       .join(""); // Merges the array into a single clean string
 
-    // 3. Inject the complete string into the container DOM node
     container.innerHTML = cardsHtml;
-
-    // 4. Trigger the layout calculations using the universal utility script
     initRevealLeftToRightStaggerOnScroll();
   } catch (error) {
     console.error("❌ Services engine template failure:", error);

@@ -41,9 +41,6 @@ export async function initServicesData() {
 
     // 3. Inject the complete string into the container DOM node
     container.innerHTML = cardsHtml;
-    console.log(
-      "📦 Services Module: 7 Premium cards successfully rendered from JSON.",
-    );
 
     // 4. Trigger the layout calculations using the universal utility script
     initRevealLeftToRightStaggerOnScroll();

@@ -9,6 +9,7 @@ import { contactForm } from "./js/contact-form.js";
 import { initRevealLeftToRightStaggerOnScroll } from "./js/animations/reveal-left-to-right-stagger-on-scroll.js";
 import { initParallaxScrollUpAndDown } from "./js/animations/paralax-scroll-up-and-down.js";
 import { initFadeInUp } from "./js/animations/fade-in-up.js";
+import { initAccessibleVideo } from "./js/video.js";
 
 /**
  * Async Component Loader to keep the HTML codebase componentized
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadComponent("hero-root", "/src/components/hero.html"),
     loadComponent("marquee-root", "/src/components/marquee.html"),
     loadComponent("intro-root", "/src/components/intro.html"),
+    loadComponent("video-root", "/src/components/video.html"),
     loadComponent("services-root", "/src/components/services.html"),
     loadComponent("about-root", "/src/components/about.html"),
     loadComponent(
@@ -68,10 +70,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     ),
   ]);
 
-  console.log(
-    "📦 All nested before/after slides successfully mounted inside sub-roots.",
-  );
-
   // 3. Trigger individual Javascript modules now that ALL HTML elements are fully painted and safe
   initNavigation();
   initMarquee();
@@ -81,4 +79,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initRevealLeftToRightStaggerOnScroll();
   initParallaxScrollUpAndDown();
   initFadeInUp();
+  initAccessibleVideo();
 });

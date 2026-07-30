@@ -1,15 +1,15 @@
 // Import global styles for Tailwind CSS v4 compilation
 import './css/style.css';
 
-import { initNavigation } from "./js/navigation.js";
-import { initMarquee } from "./js/marquee.js";
-import { initServicesData } from "./js/services-data.js";
-import { initNestedSliders } from "./js/move-out-nested-slide.js";
-import { contactForm } from "./js/contact-form.js";
-import { initRevealLeftToRightStaggerOnScroll } from "./js/animations/reveal-left-to-right-stagger-on-scroll.js";
-import { initParallaxScrollUpAndDown } from "./js/animations/paralax-scroll-up-and-down.js";
-import { initFadeInUp } from "./js/animations/fade-in-up.js";
-import { initAccessibleVideo } from "./js/video.js";
+import { initNavigation } from './js/navigation.js';
+import { initMarquee } from './js/marquee.js';
+import { initServicesData } from './js/services-data.js';
+import { initNestedSliders } from './js/move-out-nested-slide.js';
+import { contactForm } from './js/contact-form.js';
+import { initRevealLeftToRightStaggerOnScroll } from './js/animations/reveal-left-to-right-stagger-on-scroll.js';
+import { initParallaxScrollUpAndDown } from './js/animations/paralax-scroll-up-and-down.js';
+import { initFadeInUp } from './js/animations/fade-in-up.js';
+import { initAccessibleVideo } from './js/video.js';
 
 /**
  * Async Component Loader to keep the HTML codebase componentized
@@ -35,13 +35,13 @@ async function loadComponent(targetId, componentPath) {
 document.addEventListener('DOMContentLoaded', async () => {
   // 1. Inject global structural page layouts first (The main containers)
   await Promise.all([
-    loadComponent("navigation-root", "/src/components/navigation.html"),
-    loadComponent("hero-root", "/src/components/hero.html"),
-    loadComponent("marquee-root", "/src/components/marquee.html"),
-    loadComponent("intro-root", "/src/components/intro.html"),
-    loadComponent("video-root", "/src/components/video.html"),
-    loadComponent("services-root", "/src/components/services.html"),
-    loadComponent("about-root", "/src/components/about.html"),
+    loadComponent('navigation-root', '/src/components/navigation.html'),
+    loadComponent('hero-root', '/src/components/hero.html'),
+    loadComponent('marquee-root', '/src/components/marquee.html'),
+    loadComponent('intro-root', '/src/components/intro.html'),
+    loadComponent('video-root', '/src/components/video.html'),
+    loadComponent('services-root', '/src/components/services.html'),
+    loadComponent('about-root', '/src/components/about.html'),
     loadComponent(
       'move-out-root',
       '/src/components/move-out-nested-slide.html',
@@ -55,27 +55,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 2. Inject nested sub-components inside the structural shell before JavaScript boots up
   await Promise.all([
     loadComponent(
-      'bathroom-target',
-      '/src/components/before-and-after/bathroom.html',
-    ),
-    loadComponent(
-      'kitchen-target',
-      '/src/components/before-and-after/kitchen.html',
-    ),
-    loadComponent(
-      'deep-cleaning-target',
-      '/src/components/before-and-after/deep-cleaning-01.html',
-    ),
-    loadComponent(
-      'move-out-cleaning-ready-move-in',
+      'move-out-cleaning-ready-move-in-target',
       '/src/components/before-and-after/move-out-cleaning-ready-move-in.html',
     ),
     loadComponent(
-      'move-out-ready-move-in-junk-removal',
+      'move-out-ready-move-in-junk-removal-target',
       '/src/components/before-and-after/move-out-ready-move-in-junk-removal.html',
     ),
     loadComponent(
-      'move-out-junk-removal',
+      'move-out-junk-removal-target',
       '/src/components/before-and-after/move-out-junk-removal.html',
     ),
   ]);

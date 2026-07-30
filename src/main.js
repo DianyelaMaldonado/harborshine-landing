@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       'move-out-junk-removal-target',
       '/src/components/before-and-after/move-out-junk-removal.html',
     ),
+    loadComponent(
+      'move-out-junk-removal-and-smoke-stains-removal-target',
+      '/src/components/before-and-after/move-out-junk-removal-and-smoke-stains-removal.html',
+    ),
   ]);
 
   // 3. Trigger individual Javascript modules now that ALL HTML elements are fully painted and safe

@@ -36,7 +36,7 @@ export async function initServicesData() {
         } else {
           imageSectionHtml = `
             <div class="w-full h-55 overflow-hidden relative">
-              <img src="${service.image}" alt="${service.alt}" class="w-full h-full object-cover">
+              <img src="${service.image}" alt="${service.alt}" loading="lazy" class="w-full h-full object-cover">
             </div>
           `;
         }

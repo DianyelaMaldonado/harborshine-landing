@@ -58,22 +58,31 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadComponent("reviews-root", reviewsHtml);
   loadComponent("contact-root", contactHtml);
   loadComponent("footer-root", footerHtml);
-
   // 2. Inject nested sub-components inside the structural shell before JavaScript boots up
-
-  loadComponent("move-out-cleaning-ready-target", moveOutCleaningReadyHtml);
-  loadComponent("move-out-ready-junk-target", moveOutReadyJunkHtml);
+  loadComponent(
+    "move-out-cleaning-ready-move-in-target",
+    moveOutCleaningReadyHtml,
+  );
+  loadComponent(
+    "move-out-ready-move-in-junk-removal-target",
+    moveOutReadyJunkHtml,
+  );
   loadComponent("move-out-junk-removal-target", moveOutJunkRemovalHtml);
-  loadComponent("move-out-junk-smoke-target", moveOutJunkSmokeHtml);
+  loadComponent(
+    "move-out-junk-removal-and-smoke-stains-removal-target",
+    moveOutJunkSmokeHtml,
+  );
 
-  // 3. Trigger individual Javascript modules now that ALL HTML elements are fully painted and safe
-  initNavigation();
-  initMarquee();
-  initServicesData();
-  initNestedSliders(); // Boots the master category engine and the multi-instanced inner sliders
-  contactForm();
-  initAccessibleVideo();
-  initRevealLeftToRightStaggerOnScroll();
-  initParallaxScrollUpAndDown();
-  initFadeInUp();
+  // 3. Trigger individual Javascript modules with a micro-delay to guarantee DOM painting
+  setTimeout(() => {
+    initNavigation();
+    initMarquee();
+    initServicesData();
+    initNestedSliders(); // Boots the master category engine and the multi-instanced inner sliders safely
+    contactForm();
+    initAccessibleVideo();
+    initRevealLeftToRightStaggerOnScroll();
+    initParallaxScrollUpAndDown();
+    initFadeInUp();
+  }, 50);
 });

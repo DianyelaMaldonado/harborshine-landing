@@ -1,76 +1,83 @@
 // Import global styles for Tailwind CSS v4 compilation
-import './css/style.css';
+import "./css/style.css";
 
-import { initNavigation } from './js/navigation.js';
-import { initMarquee } from './js/marquee.js';
-import { initServicesData } from './js/services-data.js';
-import { initNestedSliders } from './js/move-out-nested-slide.js';
-import { contactForm } from './js/contact-form.js';
-import { initRevealLeftToRightStaggerOnScroll } from './js/animations/reveal-left-to-right-stagger-on-scroll.js';
-import { initParallaxScrollUpAndDown } from './js/animations/paralax-scroll-up-and-down.js';
-import { initFadeInUp } from './js/animations/fade-in-up.js';
-import { initAccessibleVideo } from './js/video.js';
+import { initNavigation } from "./js/navigation.js";
+import { initMarquee } from "./js/marquee.js";
+import { initServicesData } from "./js/services-data.js";
+import { initNestedSliders } from "./js/move-out-nested-slide.js";
+import { contactForm } from "./js/contact-form.js";
+import { initVideoPlayer } from "./js/video.js";
+import { initRevealLeftToRightStaggerOnScroll } from "./js/animations/reveal-left-to-right-stagger-on-scroll.js";
+import { initParallaxScrollUpAndDown } from "./js/animations/paralax-scroll-up-and-down.js";
+import { initFadeInUp } from "./js/animations/fade-in-up.js";
+
+// Import all HTML components using Vite's ?raw loader to ensure production bundling works safely
+import navigationHtml from "./components/navigation.html?raw";
+import introHtml from "./components/intro.html?raw";
+import heroHtml from "./components/hero.html?raw";
+import marqueeHtml from "./components/marquee.html?raw";
+import videoHtml from "./components/video.html?raw";
+import servicesHtml from "./components/services.html?raw";
+import aboutHtml from "./components/about.html?raw";
+import moveOutHtml from "./components/move-out-nested-slide.html?raw";
+import coverageHtml from "./components/coverage.html?raw";
+import reviewsHtml from "./components/reviews.html?raw";
+import contactHtml from "./components/contact.html?raw";
+import footerHtml from "./components/footer.html?raw";
+
+// Before and After sub-component imports
+import bathroomHtml from "./components/before-and-after/bathroom.html?raw";
+import kitchenHtml from "./components/before-and-after/kitchen.html?raw";
+import deepCleaningHtml from "./components/before-and-after/deep-cleaning-01.html?raw";
+import moveOutCleaningReadyHtml from "./components/before-and-after/move-out-cleaning-ready-move-in.html?raw";
+import moveOutReadyJunkHtml from "./components/before-and-after/move-out-ready-move-in-junk-removal.html?raw";
+import moveOutJunkRemovalHtml from "./components/before-and-after/move-out-junk-removal.html?raw";
+import moveOutJunkSmokeHtml from "./components/before-and-after/move-out-junk-removal-and-smoke-stains-removal.html?raw";
 
 /**
- * Async Component Loader to keep the HTML codebase componentized
+ * Component Loader to keep the HTML codebase componentized.
+ * Vite does not publish /src as static files in production, so components are
+ * imported as raw HTML and injected after the bundle loads.
  */
-async function loadComponent(targetId, componentPath) {
-  try {
-    const response = await fetch(componentPath);
-    if (!response.ok)
-      throw new Error(`Failed to fetch component: ${componentPath}`);
-    const html = await response.text();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.innerHTML = html;
-    }
-  } catch (error) {
-    console.error(`❌ Layout engine error:`, error);
+function loadComponent(targetId, html) {
+  const targetElement = document.getElementById(targetId);
+  if (targetElement) {
+    targetElement.innerHTML = html;
   }
 }
 
 /**
  * Main application initializer
  */
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // 1. Inject global structural page layouts first (The main containers)
-  await Promise.all([
-    loadComponent('navigation-root', '/src/components/navigation.html'),
-    loadComponent('hero-root', '/src/components/hero.html'),
-    loadComponent('marquee-root', '/src/components/marquee.html'),
-    loadComponent('intro-root', '/src/components/intro.html'),
-    loadComponent('video-root', '/src/components/video.html'),
-    loadComponent('services-root', '/src/components/services.html'),
-    loadComponent('about-root', '/src/components/about.html'),
-    loadComponent(
-      'move-out-root',
-      '/src/components/move-out-nested-slide.html',
-    ),
-    loadComponent('coverage-root', '/src/components/coverage.html'),
-    loadComponent('reviews-root', '/src/components/reviews.html'),
-    loadComponent('contact-root', '/src/components/contact.html'),
-    loadComponent('footer-root', '/src/components/footer.html'),
-  ]);
+  loadComponent("navigation-root", navigationHtml);
+  loadComponent("intro-root", introHtml);
+  loadComponent("hero-root", heroHtml);
+  loadComponent("marquee-root", marqueeHtml);
+  loadComponent("video-root", videoHtml);
+  loadComponent("services-root", servicesHtml);
+  loadComponent("about-root", aboutHtml);
+  loadComponent("move-out-root", moveOutHtml);
+  loadComponent("coverage-root", coverageHtml);
+  loadComponent("reviews-root", reviewsHtml);
+  loadComponent("contact-root", contactHtml);
+  loadComponent("footer-root", footerHtml);
+
+  console.log("✨ Global HTML layouts successfully injected into the DOM.");
 
   // 2. Inject nested sub-components inside the structural shell before JavaScript boots up
-  await Promise.all([
-    loadComponent(
-      'move-out-cleaning-ready-move-in-target',
-      '/src/components/before-and-after/move-out-cleaning-ready-move-in.html',
-    ),
-    loadComponent(
-      'move-out-ready-move-in-junk-removal-target',
-      '/src/components/before-and-after/move-out-ready-move-in-junk-removal.html',
-    ),
-    loadComponent(
-      'move-out-junk-removal-target',
-      '/src/components/before-and-after/move-out-junk-removal.html',
-    ),
-    loadComponent(
-      'move-out-junk-removal-and-smoke-stains-removal-target',
-      '/src/components/before-and-after/move-out-junk-removal-and-smoke-stains-removal.html',
-    ),
-  ]);
+  loadComponent("bathroom-target", bathroomHtml);
+  loadComponent("kitchen-target", kitchenHtml);
+  loadComponent("deep-cleaning-target", deepCleaningHtml);
+  loadComponent("move-out-cleaning-ready-target", moveOutCleaningReadyHtml);
+  loadComponent("move-out-ready-junk-target", moveOutReadyJunkHtml);
+  loadComponent("move-out-junk-removal-target", moveOutJunkRemovalHtml);
+  loadComponent("move-out-junk-smoke-target", moveOutJunkSmokeHtml);
+
+  console.log(
+    "📦 All nested before/after slides successfully mounted inside sub-roots.",
+  );
 
   // 3. Trigger individual Javascript modules now that ALL HTML elements are fully painted and safe
   initNavigation();
@@ -78,8 +85,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   initServicesData();
   initNestedSliders(); // Boots the master category engine and the multi-instanced inner sliders
   contactForm();
+  initVideoPlayer();
   initRevealLeftToRightStaggerOnScroll();
   initParallaxScrollUpAndDown();
   initFadeInUp();
-  initAccessibleVideo();
 });

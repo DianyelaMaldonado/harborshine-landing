@@ -1,17 +1,25 @@
+// Import global animation trigger
 import { initRevealLeftToRightStaggerOnScroll } from "./animations/reveal-left-to-right-stagger-on-scroll";
 
-export async function initServicesData() {
+// Import services JSON data directly so Vite bundles it safely for production deployment
+import servicesData from "../data/services.json";
+
+/**
+ * Services data loader and dynamic card injection module.
+ * Uses direct JSON import to prevent fetch failures on production servers like Netlify.
+ */
+export function initServicesData() {
   const container = document.getElementById("services-container");
   if (!container) {
     return;
   }
 
   try {
-    const response = await fetch("/src/data/services.json");
-    if (!response.ok)
-      throw new Error("Failed to load services JSON data source.");
+    const services = servicesData;
 
-    const services = await response.json();
+    if (!Array.isArray(services)) {
+      throw new Error("Services data parsed from JSON is not a valid array.");
+    }
 
     const cardsHtml = services
       .map((service) => {

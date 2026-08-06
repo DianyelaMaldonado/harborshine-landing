@@ -46,7 +46,10 @@
   },
   {
     "title": "Customized Cleaning Plans",
-    "image": "/media/assets/images/cleaning-services/customized.jpg",
+    "image": [
+      "/media/assets/images/cleaning-services/customized-before.jpg",
+      "/media/assets/images/cleaning-services/customized-after.jpg"
+    ],
     "alt": "Detailed checklist layout for professional cleaning",
     "description": "Tailored cleaning checklists designed entirely around your space's specific needs.",
     "featured": false

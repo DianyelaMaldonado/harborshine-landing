@@ -22,6 +22,7 @@ import moveOutHtml from "./components/move-out-nested-slide.html?raw";
 import coverageHtml from "./components/coverage.html?raw";
 import reviewsHtml from "./components/reviews.html?raw";
 import contactHtml from "./components/contact.html?raw";
+import ownerHtml from "./components/owner.html?raw";
 import footerHtml from "./components/footer.html?raw";
 
 // Before and After sub-component imports
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadComponent("coverage-root", coverageHtml);
   loadComponent("reviews-root", reviewsHtml);
   loadComponent("contact-root", contactHtml);
+  loadComponent("owner-root", ownerHtml);
   loadComponent("footer-root", footerHtml);
   // 2. Inject nested sub-components inside the structural shell before JavaScript boots up
   loadComponent(

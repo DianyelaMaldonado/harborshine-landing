@@ -22,7 +22,7 @@ export function initMarquee() {
   const marqueeTimeline = gsap.to(wrapper, {
     xPercent: 0,
     ease: "none",
-    duration: 18,
+    duration: 12,
     repeat: -1,
   });
 

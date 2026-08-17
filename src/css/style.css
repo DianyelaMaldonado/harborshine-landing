@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Comforter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Comforter&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Caveat:wght@500;600&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -10,12 +10,17 @@
   --color-yellow-gold: #e9bf35;
   --color-yellow-light: #f0d473;
   --color-deep-bg: #0d2327;
+  --color-mistiica: #f0dec1;
+  --color-web: #2e93a6;
+  --color-studio: #d8ae66;
 
   /* Refactored Typography Tokens Based on Style Guide */
   --font-heading: "Albert Sans", sans-serif;
   --font-body: "Albert Sans", sans-serif;
   --font-menu: "Albert Sans", sans-serif;
   --font-accent: "Comforter", cursive;
+  --font-fraunces: "Fraunces", serif;
+  --font-caveat: "Caveat", cursive;
 }
 
 html {

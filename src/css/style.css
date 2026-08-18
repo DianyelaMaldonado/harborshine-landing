@@ -15,12 +15,12 @@
   --color-studio: #d8ae66;
 
   /* Refactored Typography Tokens Based on Style Guide */
-  --font-heading: "Albert Sans", sans-serif;
-  --font-body: "Albert Sans", sans-serif;
-  --font-menu: "Albert Sans", sans-serif;
-  --font-accent: "Comforter", cursive;
-  --font-fraunces: "Fraunces", serif;
-  --font-caveat: "Caveat", cursive;
+  --font-heading: 'Albert Sans', sans-serif;
+  --font-body: 'Albert Sans', sans-serif;
+  --font-menu: 'Albert Sans', sans-serif;
+  --font-accent: 'Comforter', cursive;
+  --font-fraunces: 'Fraunces', serif;
+  --font-caveat: 'Caveat', cursive;
 }
 
 html {

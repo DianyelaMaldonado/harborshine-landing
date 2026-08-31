@@ -1,13 +1,8 @@
-// Import global animation trigger
+
 import { initRevealLeftToRightStaggerOnScroll } from "./animations/reveal-left-to-right-stagger-on-scroll";
 
-// Import services JSON data directly so Vite bundles it safely for production deployment
 import servicesData from "../data/services.json";
 
-/**
- * Services data loader and dynamic card injection module.
- * Uses direct JSON import to prevent fetch failures on production servers like Netlify.
- */
 export function initServicesData() {
   const container = document.getElementById("services-container");
   if (!container) {
@@ -32,11 +27,11 @@ export function initServicesData() {
           imageSectionHtml = `
             <div class="w-full h-55 overflow-hidden relative flex flex-row">
               <div class="w-1/2 h-full relative border-r border-white-pure/20">
-                <img src="${service.image[0]}" alt="Before - ${service.alt}" class="w-full h-full object-cover">
+                <img src="${service.image[0]}" alt="Before - ${service.alt}" loading="lazy" decoding="async" width="${service.width[0]}" height="${service.height[0]}" class="w-full h-full object-cover">
                 <span class="absolute bottom-2 left-2 bg-dark-slate/80 text-white-pure text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wider backdrop-blur-sm">Before</span>
               </div>
               <div class="w-1/2 h-full relative">
-                <img src="${service.image[1]}" alt="After - ${service.alt}" class="w-full h-full object-cover">
+                <img src="${service.image[1]}" alt="After - ${service.alt}" loading="lazy" decoding="async" width="${service.width[1]}" height="${service.height[1]}" class="w-full h-full object-cover">
                 <span class="absolute bottom-2 right-2 bg-yellow-gold text-dark-slate text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wider">After</span>
               </div>
             </div>
@@ -44,7 +39,7 @@ export function initServicesData() {
         } else {
           imageSectionHtml = `
             <div class="w-full h-55 overflow-hidden relative">
-              <img src="${service.image}" alt="${service.alt}" loading="lazy" class="w-full h-full object-cover">
+              <img src="${service.image}" alt="${service.alt}" loading="lazy" decoding="async" width="${service.width}" height="${service.height}" class="w-full h-full object-cover">
             </div>
           `;
         }
@@ -60,7 +55,7 @@ export function initServicesData() {
         </article>
       `;
       })
-      .join(""); // Merges the array into a single clean string
+      .join(""); 
 
     container.innerHTML = cardsHtml;
     initRevealLeftToRightStaggerOnScroll();

@@ -3,9 +3,9 @@
 > Harborshine Cleaning Co. provides professional residential, move-out, and deep cleaning services across San Diego, California.
 
 ## Navigation Sections
-- [About Us](https://harborshineapp.netlify.app/#about): Company background and values.
-- [Cleaning Services](https://harborshineapp.netlify.app/#services): Overview of standard, deep, and custom cleaning plans.
-- [Before & After](https://harborshineapp.netlify.app/#move-out): Visual transformation comparisons of completed cleanings.
-- [Reviews](https://harborshineapp.netlify.app/#reviews): Customer testimonials and 5-star feedback.
-- [Coverage Areas](https://harborshineapp.netlify.app/#coverage-areas): Service locations across San Diego including Old Town, La Jolla, and Pacific Beach.
-- [Contact Us](https://harborshineapp.netlify.app/#contact): Direct booking channels and customer support.
+- [About Us](https://harborshine-cleaning.com/#about): Company background and values.
+- [Cleaning Services](https://harborshine-cleaning.com/#services): Overview of standard, deep, and custom cleaning plans.
+- [Before & After](https://harborshine-cleaning.com/#move-out): Visual transformation comparisons of completed cleanings.
+- [Reviews](https://harborshine-cleaning.com/#reviews): Customer testimonials and 5-star feedback.
+- [Coverage Areas](https://harborshine-cleaning.com/#coverage-areas): Service locations across San Diego including Old Town, La Jolla, and Pacific Beach.
+- [Contact Us](https://harborshine-cleaning.com/#contact): Direct booking channels and customer support.

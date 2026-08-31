@@ -2,44 +2,56 @@
   {
     "title": "Standard Cleaning",
     "image": [
-      "/media/assets/images/cleaning-services/starndar-cleaning-before.jpg",
-      "/media/assets/images/cleaning-services/starndar-cleaning-after.jpg"
+      "/media/assets/images/cleaning-services/starndar-cleaning-before.webp",
+      "/media/assets/images/cleaning-services/starndar-cleaning-after.webp"
     ],
+    "width": [4000, 4000],
+    "height": [1848, 1848],
     "alt": "Standard cleaning before and after room transformation",
     "description": "Routine cleaning to keep your home fresh, tidy, and sparkling on a regular basis.",
     "featured": false
   },
   {
     "title": "Deep Cleaning",
-    "image": "/media/assets/images/cleaning-services/deep-cleaning.jpg",
+    "image": "/media/assets/images/cleaning-services/deep-cleaning.webp",
+    "width": 1328,
+    "height": 1008,
     "alt": "Deep cleaned home interior showing pristine details",
     "description": "A thorough, detailed scrub targeting hard-to-reach areas for a complete refresh.",
     "featured": false
   },
   {
     "title": "Vacations Rentals, Airbnb",
-    "image": "/media/assets/images/cleaning-services/vactions-rentals-airbnb.jpg",
+    "image": "/media/assets/images/cleaning-services/vactions-rentals-airbnb.webp",
+    "width": 4000,
+    "height": 1848,
     "alt": "Immaculate guest bedroom ready for check-in",
     "description": "Fast and immaculate turnovers designed to earn your property 5-star guest reviews.",
     "featured": false
   },
   {
     "title": "Office & Commercial Cleaning",
-    "image": "/media/assets/images/cleaning-services/office.jpg",
+    "image": "/media/assets/images/cleaning-services/office.webp",
+    "width": 1168,
+    "height": 784,
     "alt": "Modern clean office workspace layout",
     "description": "Professional cleaning solutions to maintain a pristine, healthy, and dynamic workspace.",
     "featured": false
   },
   {
     "title": "Pressure Washing",
-    "image": "/media/assets/images/cleaning-services/pressure-washer.jpg",
+    "image": "/media/assets/images/cleaning-services/pressure-washer.webp",
+    "width": 1168,
+    "height": 784,
     "alt": "Clean patio driveway after professional pressure washing",
     "description": "High-powered exterior washing to remove tough dirt from driveways, patios, and walls.",
     "featured": false
   },
   {
     "title": "Move Out & In Specials",
-    "image": "/media/assets/images/cleaning-services/residential.jpg",
+    "image": "/media/assets/images/cleaning-services/residential.webp",
+    "width": 1504,
+    "height": 688,
     "alt": "Empty clean apartment rooms ready for new tenants",
     "description": "Comprehensive deep cleanings to ensure apartments and homes are ready for new beginnings.",
     "featured": false
@@ -47,9 +59,11 @@
   {
     "title": "Customized Cleaning Plans",
     "image": [
-      "/media/assets/images/cleaning-services/customized-before.jpg",
-      "/media/assets/images/cleaning-services/customized-after.jpg"
+      "/media/assets/images/cleaning-services/customized-before.webp",
+      "/media/assets/images/cleaning-services/customized-after.webp"
     ],
+    "width": [4000, 1504],
+    "height": [1848, 688],
     "alt": "Detailed checklist layout for professional cleaning",
     "description": "Tailored cleaning checklists designed entirely around your space's specific needs.",
     "featured": false

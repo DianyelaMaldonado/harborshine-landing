@@ -12,7 +12,6 @@ export function initNestedSliders() {
       return;
     }
 
-    // 1. Mount Master External Category Slider
     const outerSlider = new Splide("#outer-slider", {
       type: "fade",
       rewind: true,
@@ -20,12 +19,11 @@ export function initNestedSliders() {
       pagination: false,
       arrows: true,
       drag: false,
-      keyboard: "focused", // A11Y FIX: Only react to keyboard when explicitly focused
+      keyboard: "focused", 
     });
 
     outerSlider.mount();
 
-    // 2. Query and loop through all internal photo carousels
     const innerElements = document.querySelectorAll(".inner-slider");
 
     if (innerElements.length === 0) {
@@ -41,8 +39,8 @@ export function initNestedSliders() {
         pagination: false,
         fixedWidth: "65%",
         gap: "1.5rem",
-        slideFocus: false, // A11Y FIX: Prevent double tabbing per slide
-        keyboard: "focused", // A11Y FIX: Isolate keyboard controls
+        slideFocus: false, 
+        keyboard: "focused", 
         autoScroll: {
           speed: 1,
           pauseOnHover: true,
@@ -59,7 +57,6 @@ export function initNestedSliders() {
 
       innerSlider.mount({ AutoScroll });
 
-      // 3. Accessible Lightbox Initialization
       const lightbox = new PhotoSwipeLightbox({
         gallery: element,
         children: "a.gallery-item",
@@ -75,7 +72,7 @@ export function initNestedSliders() {
       });
 
       lightbox.on("close", () => {
-        // Only resume if the manual pause toggle button is NOT pressed
+        
         const toggleBtn = element.querySelector(".autoscroll-toggle");
         const isManuallyPaused =
           toggleBtn && toggleBtn.getAttribute("aria-pressed") === "true";
@@ -88,7 +85,6 @@ export function initNestedSliders() {
 
       lightbox.init();
 
-      // 4. A11Y FIX: Manual Auto-Scroll Toggle Logic
       const toggleBtn = element.querySelector(".autoscroll-toggle");
       if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {

@@ -9,13 +9,11 @@ export function contactForm() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Reset validations hints
     const errorFirst = document.getElementById("error-first-name");
     const errorEmail = document.getElementById("error-email");
     if (errorFirst) errorFirst.classList.add("hidden");
     if (errorEmail) errorEmail.classList.add("hidden");
 
-    // Basic frontend custom validation check
     const firstNameInput = document.getElementById("first-name");
     const emailInput = document.getElementById("email");
     let hasError = false;
@@ -30,10 +28,8 @@ export function contactForm() {
       hasError = true;
     }
 
-    // Stop execution if front-end constraints fail
     if (hasError) return;
 
-    // Prepare processing layout form submit state
     const formData = new FormData(form);
     const originalText = submitBtn.textContent;
 
@@ -49,7 +45,7 @@ export function contactForm() {
       const data = await response.json();
 
       if (response.ok) {
-        // 🎉 Success workflow triggers
+        
         if (successMessage) {
           successMessage.classList.remove("hidden");
         }
@@ -61,7 +57,7 @@ export function contactForm() {
       console.error("❌ Submission error:", error);
       alert("Something went wrong. Please try again.");
     } finally {
-      // Restore initial interactive interface controls
+      
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
     }

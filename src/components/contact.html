@@ -1,20 +1,17 @@
 <section data-animate="fade-in-up" id="contact" class="relative w-full py-20 bg-cover bg-center bg-no-repeat"
-  style="background-image: linear-gradient(rgba(0, 180, 216, 0.2), rgba(30, 41, 59, 0.85)), url('/media/assets/images/contact-bg.jpg');"
+  style="background-image: linear-gradient(rgba(0, 180, 216, 0.2), rgba(30, 41, 59, 0.85)), url('/media/assets/images/contact-bg.jpg'); background-image: linear-gradient(rgba(0, 180, 216, 0.2), rgba(30, 41, 59, 0.85)), image-set(url('/media/assets/images/contact-bg.webp') type('image/webp'), url('/media/assets/images/contact-bg.jpg') type('image/jpeg'));"
   aria-labelledby="contact-heading">
   <div class="container mx-auto px-4 max-w-6xl">
 
-    <!-- Column Master Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-target-box">
 
-      <!-- LEFT COLUMN-->
       <div class="lg:col-span-4 bg-white-pure rounded-[30px] p-8 md:p-10 shadow-xl flex flex-col gap-8 font-albert">
         <div class="text-center lg:text-left">
-          <p id="contact-heading" class="h-medium uppercase inline-block border-b-[5px] border-cyan-brand-dark pb-0.5">
+          <h2 id="contact-heading" class="h-medium uppercase inline-block border-b-[5px] border-cyan-brand-dark pb-0.5">
             Contact Us
-          </p>
+          </h2>
         </div>
 
-        <!-- Phone Detail Row -->
         <div class="flex items-center gap-5 text-left">
           <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0">
             <img src="/media/icons/i-phone.png" alt="" class="w-14 h-14 object-contain" aria-hidden="true">
@@ -26,7 +23,6 @@
           </a>
         </div>
 
-        <!-- Address Detail Row -->
         <div class="flex items-start gap-5 text-left">
           <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 mt-1">
             <img src="/media/icons/i-location.png" alt="" class="w-10 h-10 object-contain" aria-hidden="true">
@@ -39,12 +35,10 @@
         </div>
       </div>
 
-      <!-- RIGHT COLUMN -->
       <div class="lg:col-span-8 bg-white-pure rounded-[30px] p-8 md:p-10 shadow-xl">
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6"
           novalidate>
 
-          <!--  Web3Forms Access Key Token Injection -->
           <input type="hidden" name="access_key" value="223c4a1f-bb94-491b-96f2-5c9586c0f79c">
 
           <div id="success-message"
@@ -54,9 +48,8 @@
             <span> Thank you for contacting Harborshine Co.</span>
           </div>
 
-          <!-- ROW 1: First Name & Last Name in parallel from md up -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- First Name Field (REQUIRED) -->
+
             <div class="flex flex-col gap-2 text-left">
               <label for="first-name" class="form-label uppercase tracking-wider text-dark-slate">
                 First Name:
@@ -67,7 +60,6 @@
                 name is required.</span>
             </div>
 
-            <!-- Last Name Field -->
             <div class="flex flex-col gap-2 text-left">
               <label for="last-name" class="form-label uppercase tracking-wider text-dark-slate">
                 Last Name:
@@ -77,9 +69,8 @@
             </div>
           </div>
 
-          <!-- ROW 2: Phone & Email in parallel from md up -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Phone Field -->
+
             <div class="flex flex-col gap-2 text-left">
               <label for="phone" class="form-label uppercase tracking-wider text-dark-slate">
                 Phone:
@@ -90,7 +81,6 @@
                 to 15 digits).</span>
             </div>
 
-            <!-- Email Field (REQUIRED) -->
             <div class="flex flex-col gap-2 text-left">
               <label for="email" class="form-label uppercase tracking-wider text-dark-slate">
                 Email:
@@ -103,7 +93,6 @@
             </div>
           </div>
 
-          <!-- ROW 3: Full Width Message Field -->
           <div class="flex flex-col gap-2 text-left">
             <label for="message" class="form-label uppercase tracking-wider text-dark-slate">
               Message:
@@ -112,7 +101,6 @@
               class="form-input form-placeholder w-full text-dark-slate bg-gray-200 placeholder-dark-slate/40 px-5 py-4 rounded-[15px] border border-transparent focus:outline-none focus:border-cyan-brand focus:bg-white-pure transition-all duration-200 resize-none"></textarea>
           </div>
 
-          <!-- SUBMIT BUTTON -->
           <div class="text-left mt-4">
             <button type="submit" aria-label="Submit contact form"
               class="inline-block px-5 py-1 rounded-md bg-yellow-light text-dark-slate font-sans font-bold text-[1.35rem] tracking-wide uppercase cursor-pointer shadow-[inset_0_0_0_0_var(--color-dark-slate)] hover:text-yellow-light hover:shadow-[inset_300px_0_0_0_var(--color-dark-slate)] transition-all duration-500 ease-out">

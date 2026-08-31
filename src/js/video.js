@@ -4,7 +4,6 @@ export function initAccessibleVideo() {
   const restartBtn = document.getElementById("video-restart-btn");
   const videoSection = document.getElementById("harborshine-video-section");
 
-  // Safety check: Exit if elements don't exist
   if (!video || !toggleBtn || !restartBtn || !videoSection) {
     return;
   }
@@ -12,7 +11,6 @@ export function initAccessibleVideo() {
   const playIcon = toggleBtn.querySelector(".play-icon");
   const pauseIcon = toggleBtn.querySelector(".pause-icon");
 
-  // 1. Function to update UI icons based on video state
   function updateToggleUI() {
     if (video.paused) {
       toggleBtn.setAttribute("aria-pressed", "false");
@@ -27,9 +25,8 @@ export function initAccessibleVideo() {
     }
   }
 
-  // 2. Main toggle logic (Play/Pause/Unmute)
   function handleVideoToggle() {
-    // Ensure sound is active when user interacts
+    
     video.muted = false;
 
     if (video.paused || video.ended) {
@@ -40,25 +37,20 @@ export function initAccessibleVideo() {
     updateToggleUI();
   }
 
-  // 3. Restart logic (Top right button)
   function handleRestart() {
-    video.currentTime = 0; // Rewind to start
-    video.muted = false; // Ensure sound is ON
-    video.play(); // Force play
+    video.currentTime = 0; 
+    video.muted = false; 
+    video.play(); 
     updateToggleUI();
   }
 
-  // 4. Bind events
   toggleBtn.addEventListener("click", handleVideoToggle);
   restartBtn.addEventListener("click", handleRestart);
   video.addEventListener("click", handleVideoToggle);
   video.addEventListener("ended", updateToggleUI);
 
-  // Set initial UI state
   updateToggleUI();
 
-  // 5. INTERSECTION OBSERVER: Handle Scroll Mute/Pause
-  // Native web API to detect when the video section is visible on screen
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -67,14 +59,18 @@ export function initAccessibleVideo() {
 
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      // If the video leaves the viewport and is currently playing, pause it
-      if (!entry.isIntersecting && !video.paused) {
+      if (entry.isIntersecting) {
+        if (video.paused) {
+          video.muted = true;
+          video.play().catch(() => {});
+          updateToggleUI();
+        }
+      } else if (!video.paused) {
         video.pause();
         updateToggleUI();
       }
     });
   }, observerOptions);
 
-  // Start observing the video section
   videoObserver.observe(videoSection);
 }

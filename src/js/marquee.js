@@ -11,14 +11,11 @@ export function initMarquee() {
 
   if (!wrapper || !content) return;
 
-  // 1. CLONE ARCHITECTURE: Duplicate content once for infinite loop
   const clone = content.cloneNode(true);
   wrapper.appendChild(clone);
 
-  // 2. SET INITIAL POSITION: Move wrapper -50% to prepare the rightwards animation
   gsap.set(wrapper, { xPercent: -50 });
 
-  // 3. GSAP INFINITE ANIMATION
   const marqueeTimeline = gsap.to(wrapper, {
     xPercent: 0,
     ease: "none",

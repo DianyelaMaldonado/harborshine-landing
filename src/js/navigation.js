@@ -1,21 +1,14 @@
 import Alpine from "alpinejs";
 import { gsap } from "gsap";
 
-/**
- * Initializes Alpine.js core and binds premium GSAP interactions to the header layout
- */
 export function initNavigation() {
-  // Bind Alpine globally for cross-template compatibility
+  
   window.Alpine = Alpine;
   Alpine.start();
 
-  // Inject our high-performance animation controller engine
   initPremiumNavbarEngine();
 }
 
-/**
- * Core navigation controller handling scroll-lock, animations and scroll states
- */
 function initPremiumNavbarEngine() {
   const header = document.getElementById("site-header");
   const toggle = document.getElementById("menu-toggle");
@@ -33,12 +26,8 @@ function initPremiumNavbarEngine() {
 
   if (!header || !toggle || !dropdown || !dropdownContent || !backdrop) return;
 
-  // Target all individual <li> elements inside the mobile menu for the stagger effect
   const mobileMenuItems = dropdownContent.querySelectorAll("ul > li");
 
-  // ---------------------------------------------------------------------------
-  // INTERACTIVE INITIAL STATES
-  // ---------------------------------------------------------------------------
   gsap.set(dropdown, {
     autoAlpha: 0,
     height: 0,
@@ -49,9 +38,6 @@ function initPremiumNavbarEngine() {
   gsap.set(backdrop, { autoAlpha: 0, pointerEvents: "none" });
   gsap.set(header, { y: 0 });
 
-  // ---------------------------------------------------------------------------
-  // IOS COMPATIBLE SCROLL LOCKING ENGINE
-  // ---------------------------------------------------------------------------
   let capturedScrollY = 0;
 
   const lockScroll = () => {
@@ -70,9 +56,6 @@ function initPremiumNavbarEngine() {
     window.scrollTo(0, capturedScrollY);
   };
 
-  // ---------------------------------------------------------------------------
-  //  RESPONSIVE CONSTRAINTS VIEWPORT LOGIC
-  // ---------------------------------------------------------------------------
   const isMobileDevice = () =>
     window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
@@ -92,9 +75,6 @@ function initPremiumNavbarEngine() {
     dropdownContent.style.webkitOverflowScrolling = "";
   };
 
-  // ---------------------------------------------------------------------------
-  //  BURGER ICON TRANSFORM TIMELINE
-  // ---------------------------------------------------------------------------
   const iconTl = gsap.timeline({ paused: true });
   iconTl
     .to(topLine, {
@@ -120,16 +100,12 @@ function initPremiumNavbarEngine() {
   let isOpen = false;
   let currentActiveTimeline = null;
 
-  // ---------------------------------------------------------------------------
-  // TRANSITION HANDLERS: OPEN ENGINE (WITH STAGGERED LINKS)
-  // ---------------------------------------------------------------------------
   const openMenu = () => {
     if (currentActiveTimeline) currentActiveTimeline.kill();
 
     lockScroll();
     applyMobileMenuStyles();
 
-    // Reset mobile items to a hidden state on the left before animating them
     gsap.set(mobileMenuItems, { opacity: 0, x: -40 });
 
     const targetDropdownHeight = dropdown.scrollHeight;
@@ -155,7 +131,7 @@ function initPremiumNavbarEngine() {
         "-=0.1",
       )
       .to(dropdownContent, { autoAlpha: 1, duration: 0.2 }, "-=0.2")
-      // STAGGER MAGIC: Links smoothly slide from x: -40 to x: 0 one by one
+      
       .to(
         mobileMenuItems,
         {
@@ -163,7 +139,7 @@ function initPremiumNavbarEngine() {
           x: 0,
           duration: 0.4,
           ease: "power2.out",
-          stagger: 0.08, // Time delay between each link's entry
+          stagger: 0.08, 
         },
         "-=0.15",
       );
@@ -171,7 +147,6 @@ function initPremiumNavbarEngine() {
     iconTl.play();
     isOpen = true;
 
-    // Anchor the structural header firmly in place when screen is active
     gsap.to(header, {
       y: 0,
       backgroundColor: "#ffffff",
@@ -181,9 +156,6 @@ function initPremiumNavbarEngine() {
     });
   };
 
-  // ---------------------------------------------------------------------------
-  // TRANSITION HANDLERS: CLOSE ENGINE
-  // ---------------------------------------------------------------------------
   const closeMenu = () => {
         unlockScroll();
         resetMobileMenuStyles();
@@ -235,9 +207,6 @@ function initPremiumNavbarEngine() {
     isOpen = false;
   };
 
-  // ---------------------------------------------------------------------------
-  // EVENT LISTENER ARCHITECTURE
-  // ---------------------------------------------------------------------------
   toggle.addEventListener("click", () => {
     isOpen ? closeMenu() : openMenu();
   });
@@ -254,9 +223,6 @@ function initPremiumNavbarEngine() {
     if (isOpen) applyMobileMenuStyles();
   });
 
-  // ---------------------------------------------------------------------------
-  // HIGH-PERFORMANCE PEEKABOO NAVIGATION ENGINE
-  // ---------------------------------------------------------------------------
   let lastScrollY = window.scrollY;
   let ticking = false;
   let headerVisible = true;

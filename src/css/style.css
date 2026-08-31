@@ -2,7 +2,6 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Brand Color Tokens */
   --color-white-pure: #ffffff;
   --color-cyan-brand: #3fb7c8;
   --color-cyan-brand-dark: #2f8c9c;
@@ -11,10 +10,9 @@
   --color-yellow-light: #f0d473;
   --color-deep-bg: #0d2327;
   --color-mistiica: #f0dec1;
-  --color-web: #2e93a6;
+  --color-web: #66c3d4;
   --color-studio: #d8ae66;
 
-  /* Refactored Typography Tokens Based on Style Guide */
   --font-heading: 'Albert Sans', sans-serif;
   --font-body: 'Albert Sans', sans-serif;
   --font-menu: 'Albert Sans', sans-serif;
@@ -36,18 +34,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* -------------------------------------------------------------
-    TYPOGRAPHY Based on Style Guide Figma
-   ------------------------------------------------------------- */
-
-/* H1 / Albert Sans Light: 86px | -1.5 tracking | 144 line-height */
 h1 {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, 5.375rem);
   line-height: 1.67;
 }
 
-/* H2 / Albert Sans Light: 60px | -.5 tracking | 90 line-height */
 h2 {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.75rem);
@@ -55,14 +47,13 @@ h2 {
   line-height: 1;
 }
 
-/* H3 / Albert Sans Regular: 48px | 0 tracking | 72 line-height */
 h3 {
   font-family: var(--font-heading);
   font-size: clamp(1.75rem, 3.5vw, 3rem);
   letter-spacing: 0em;
   line-height: 1.5;
 }
-/* HEADING VARIANT: 40px desktop -  heading */
+
 .h-medium {
   font-family: var(--font-heading);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
@@ -70,7 +61,6 @@ h3 {
   line-height: 1.4;
 }
 
-/* H4 / Albert Sans Regular: 34px | .25 tracking | 51 line-height */
 h4 {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 2.5vw, 2.125rem);
@@ -78,7 +68,6 @@ h4 {
   line-height: 1.5;
 }
 
-/* H5 / Albert Sans Regular: 24px | 0 tracking | 36 line-height */
 h5 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -86,14 +75,13 @@ h5 {
   line-height: 1.5;
 }
 
-/* H6 / Albert Sans SemiBold: 20px | .25 tracking | 30 line-height */
 h6 {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   letter-spacing: 0.0125em;
   line-height: 1.5;
 }
-/* VARIANT 1: Standard Body Paragraph (18px desktop) */
+
 p {
   font-family: var(--font-body);
   font-size: 1.125rem;
@@ -101,7 +89,6 @@ p {
   line-height: 1.33;
 }
 
-/* VARIANT 2:layouts (24px desktop) */
 .p-medium {
   font-family: var(--font-body);
   font-size: clamp(1.125rem, 2vw, 1.5rem);
@@ -109,7 +96,6 @@ p {
   line-height: 1.5;
 }
 
-/* VARIANT 3:  descriptions (32px desktop) */
 .p-large {
   font-family: var(--font-body);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
@@ -117,7 +103,6 @@ p {
   line-height: 1.4;
 }
 
-/* Accent font: Comforter Cursive */
 .font-cursive {
   font-family: var(--font-accent);
   font-size: clamp(2rem, 4vw, 3rem);
@@ -136,25 +121,24 @@ p {
   max-width: 1440px;
 }
 
-/* Form */
 @utility form-label {
   font-family: var(--font-albert);
   font-weight: 700;
-  font-size: 1rem; /* 20px estáticos */
+  font-size: 1rem;
   letter-spacing: 0.01em;
 }
 
 @utility form-input {
   font-family: var(--font-albert);
   font-weight: 700;
-  font-size: 1rem; /* 20px estáticos */
+  font-size: 1rem;
 }
 
 @utility form-placeholder {
   &::placeholder {
     font-family: var(--font-albert);
     font-weight: 700;
-    font-size: 1rem; /* 20px estáticos */
+    font-size: 1rem;
   }
 }
 
@@ -164,5 +148,3 @@ p {
   font-size: 1.125rem;
   letter-spacing: 0.01em;
 }
-
-/**/
